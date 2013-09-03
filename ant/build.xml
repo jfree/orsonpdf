@@ -110,7 +110,7 @@
         <copy file="${basedir}/README.md" tofile="${basedir}/distribution/README.md" />
 
         <!-- copy across runtime jar file -->
-        <copy file="${basedir}/lib/${jfreeg2d.name}-${jfreeg2d.version}.jar" tofile="${basedir}/distribution/${jfreeg2d.name}-${jfreeg2d.version}.jar" />
+        <copy file="${basedir}/lib/${orsonpdf.name}-${orsonpdf.version}.jar" tofile="${basedir}/distribution/${orson-pdf.name}-${orsonpdf.version}.jar" />
 
         <!-- copy across JFreeChart and JCommon jar files -->
         <copy file="${basedir}/lib/${jfreechart.name}-${jfreechart.version}.jar" tofile="${basedir}/distribution/lib/${jfreechart.name}-${jfreechart.version}.jar" />

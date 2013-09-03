@@ -76,7 +76,7 @@
                  windowtitle="OrsonPDF version ${orsonpdf.version}"
                  overview="${basedir}/src/main/java/overview.html"
                  use="yes"
-                 linksource="yes"
+                 linksource="no"
                  splitindex="yes">
             <classpath refid="build.classpath" />
             <packageset dir="${basedir}/src/main/java"

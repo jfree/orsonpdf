@@ -13,7 +13,11 @@ import java.awt.RadialGradientPaint;
 import java.util.Arrays;
 
 /**
- * A key.
+ * A wrapper for a <code>RadialGradientPaint</code> that can be used as the key 
+ * for a <code>HashMap</code>.  This class is used internally by 
+ * <code>PDFGraphics2D</code> to track and re-use gradient definitions.  
+ * <code>GradientPaint</code> itself does not implement the equals() and 
+ * hashCode() methods, so it doesn't make a good key for a <code>Map</code>.
  */
 public class RadialGradientPaintKey {
     
@@ -21,10 +25,16 @@ public class RadialGradientPaintKey {
     
     float f = 0.0f;
     
-    public RadialGradientPaintKey(RadialGradientPaint mgp) {
-        Args.nullNotPermitted(mgp, "mgp");
-        this.paint = mgp;
+    /**
+     * Creates a new key instance.
+     * 
+     * @param rgp  the radial gradient paint.
+     */
+    public RadialGradientPaintKey(RadialGradientPaint rgp) {
+        Args.nullNotPermitted(rgp, "rgp");
+        this.paint = rgp;
     }
+
     /**
      * Returns the <code>RadialGradientPaint</code> that was supplied to the 
      * constructor.

@@ -50,4 +50,4 @@ Version 1.1 (3 September 2013)
 
 Version 1.0 (31 July 2013)
 
--Initial public release (JFreeGraphics2D).
+- Initial public release (JFreeGraphics2D).

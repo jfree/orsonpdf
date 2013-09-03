@@ -1,4 +1,4 @@
 /**
  * A utility package for the <b>OrsonPDF</b> library.
  */
-package com.orsonpdf.utils;
+package com.orsonpdf.util;

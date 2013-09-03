@@ -120,7 +120,7 @@ public class Page extends PDFObject {
                     (int) this.bounds.getHeight(), true);
             g2.setFont(new Font("Monospaced", Font.BOLD, 20));
             g2.setPaint(Color.DARK_GRAY);
-            TextUtils.drawAlignedString("Evaluation version from orsonpdf.com", 
+            TextUtils.drawAlignedString("Evaluation version of OrsonPDF", 
                     g2, (float) this.bounds.getCenterX(), 
                     (float) this.bounds.getCenterY(), TextAnchor.CENTER);
             g2.dispose();

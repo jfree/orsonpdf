@@ -62,9 +62,9 @@ public class PDFPieChartDemo1 {
     private static JFreeChart createChart(PieDataset dataset) {
 
         JFreeChart chart = ChartFactory.createPieChart(
-            "Smart Phones Manufactured / Q3 2011", dataset);
+            "Smart Phones Manufactured / Q3 2011", dataset, false, false, 
+            false);
 
-        chart.removeLegend();
         chart.setBackgroundPaint(new GradientPaint(new Point(0, 0), 
                 new Color(20, 20, 20), new Point(400, 200), Color.DARK_GRAY));
 

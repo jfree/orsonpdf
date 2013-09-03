@@ -47,7 +47,7 @@ public class PDFTimeSeriesChartDemo1 {
 
         JFreeChart chart = ChartFactory.createTimeSeriesChart(
             "International Coffee Organisation : Coffee Prices",
-            null, "US cents/lb", dataset);
+            null, "US cents/lb", dataset, true, false, false);
 
         String fontName = "Palatino";
         chart.getTitle().setFont(new Font(fontName, Font.BOLD, 18));

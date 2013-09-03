@@ -25,6 +25,7 @@ import org.jfree.chart.labels.ItemLabelAnchor;
 import org.jfree.chart.labels.ItemLabelPosition;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.StatisticalBarRenderer;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.statistics.DefaultStatisticalCategoryDataset;
@@ -65,7 +66,8 @@ public class PDFBarChartDemo1 {
 
         // create the chart...
         JFreeChart chart = ChartFactory.createLineChart(
-            "Statistical Bar Chart Demo 1", "Type", "Value", dataset);
+            "Statistical Bar Chart Demo 1", "Type", "Value", dataset, 
+            PlotOrientation.VERTICAL, true, false, false);
 
         CategoryPlot plot = (CategoryPlot) chart.getPlot();
 

@@ -73,7 +73,7 @@
         <delete dir="${basedir}/javadoc" />
         <mkdir dir="${basedir}/javadoc" />
         <javadoc destdir="${basedir}/javadoc"
-                 windowtitle="OrsonPDF (version ${orsonpdf.version})"
+                 windowtitle="OrsonPDF version ${orsonpdf.version}"
                  overview="${basedir}/src/main/java/overview.html"
                  use="yes"
                  linksource="yes"

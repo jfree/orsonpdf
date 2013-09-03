@@ -50,7 +50,7 @@ public abstract class Stream extends PDFObject {
     /**
      * Removes any filters that were previously added.
      * 
-     * @see #addFilter(org.jfree.graphics2d.pdf.filter.Filter) 
+     * @see #addFilter(com.orsonpdf.filter.Filter) 
      */
     public void removeFilters() {
         this.filters.clear();

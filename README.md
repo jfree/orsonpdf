@@ -32,9 +32,9 @@ OrsonPDF is proprietary software.  The evaluation version is free, but places a 
 
 Other code distributed with OrsonPDF:
 
-    - OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and distributed freely under the (BSD-style) terms listed in the Ascii85OutputStream-license.txt file in the 'lib' folder;
+- OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and distributed freely under the (BSD-style) terms listed in the Ascii85OutputStream-license.txt file in the 'lib' folder;
 
-    - the JFreeChart and JCommon libraries (required for the demos only) are licensed under the terms of the GNU Lesser General Public License (GNU LGPL), a copy of this license can also be found in the 'lib' folder.  To get the source code and other information about JFreeChart and JCommon, please visit http://www.jfree.org/jfreechart/
+- the JFreeChart and JCommon libraries (required for the demos only) are licensed under the terms of the GNU Lesser General Public License (GNU LGPL), a copy of this license can also be found in the 'lib' folder.  To get the source code and other information about JFreeChart and JCommon, please visit http://www.jfree.org/jfreechart/
 
 
 Change History
@@ -49,4 +49,5 @@ Version 1.1 (3 September 2013)
 - moved PDF classes into OrsonPDF project (changing the root package to com.orsonpdf.*);
 
 Version 1.0 (31 July 2013)
+
 -Initial public release (JFreeGraphics2D).

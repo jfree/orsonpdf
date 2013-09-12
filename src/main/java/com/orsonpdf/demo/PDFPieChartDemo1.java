@@ -141,6 +141,7 @@ public class PDFPieChartDemo1 {
         pdfDoc.setAuthor("Object Refinery Limited");
         Page page = pdfDoc.createPage(new Rectangle(612, 468));
         PDFGraphics2D g2 = page.getGraphics2D();
+        g2.setRenderingHint(JFreeChart.KEY_SUPPRESS_SHADOW_GENERATION, true);
         chart.draw(g2, new Rectangle(0, 0, 612, 468));
         File f = new File("PDFPieChartDemo1.pdf");
         pdfDoc.writeToFile(f);

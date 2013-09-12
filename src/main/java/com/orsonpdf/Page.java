@@ -243,7 +243,7 @@ public class Page extends PDFObject {
             coords[1] = gp.getFocusPoint().getY();
             coords[2] = 0.0;
             coords[3] = gp.getCenterPoint().getX();
-            coords[4] = gp.getCenterPoint().getX();
+            coords[4] = gp.getCenterPoint().getY();
             coords[5] = gp.getRadius();
             Shading s = new RadialShading(doc.getNextNumber(), coords, f);
             doc.addObject(s);
@@ -257,8 +257,9 @@ public class Page extends PDFObject {
         return patternName; 
     }
     
-    private Function createFunctionForMultipleGradient(MultipleGradientPaint mgp) {
-            PDFDocument doc = this.parent.getDocument();
+    private Function createFunctionForMultipleGradient(
+            MultipleGradientPaint mgp) {
+        PDFDocument doc = this.parent.getDocument();
 
         if (mgp.getColors().length == 2) {
             Function f = new ExponentialInterpolationFunction(

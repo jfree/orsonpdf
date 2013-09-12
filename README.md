@@ -1,7 +1,7 @@
 OrsonPDF
 ========
 
-Version 1.2, 12 September 2013
+Version 1.2, 13 September 2013
 
 (C)opyright 2013, by Object Refinery Limited.  All rights reserved.
 
@@ -12,7 +12,7 @@ OrsonPDF is a graphics library for the Java(tm) platform that allows you to gene
 
     http://www.object-refinery.com/pdf/
 
-Version 1.0 was release on 31 July 2013 and the most recent version (1.2) was released on 12 September 2013.  Changes since the initial release are listed towards the end of this file.
+Version 1.0 was release on 31 July 2013 and the most recent version (1.2) was released on 13 September 2013.  Changes since the initial release are listed towards the end of this file.
 
 
 Getting Started

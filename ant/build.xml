@@ -14,7 +14,7 @@
     <target name="initialise" description="Initialise required settings.">
         <tstamp />
         <property name="orsonpdf.name" value="orsonpdf" />
-        <property name="orsonpdf.version" value="1.1" />
+        <property name="orsonpdf.version" value="1.2" />
         <property name="jfreechart.name" value="jfreechart" />
         <property name="jfreechart.version" value="1.0.15" />
         <property name="jcommon.name" value="jcommon" />

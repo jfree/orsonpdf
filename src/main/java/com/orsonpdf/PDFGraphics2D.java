@@ -121,6 +121,8 @@ public final class PDFGraphics2D extends Graphics2D {
     /** The content created by the Graphics2D instance. */
     private GraphicsStream gs;
     
+    private GraphicsConfiguration deviceConfiguration;
+
     /**
      * Creates a new instance of <code>PDFGraphics2D</code>.  You won't 
      * normally create this directly, instead you will call the 
@@ -770,13 +772,18 @@ public final class PDFGraphics2D extends Graphics2D {
     }
 
     /**
-     * Not yet implemented.
+     * Returns the device configuration associated with this
+     * <code>Graphics2D</code>.
      * 
      * @return The graphics configuration.
      */
     @Override
     public GraphicsConfiguration getDeviceConfiguration() {
-        throw new UnsupportedOperationException("Not supported yet."); // TODO
+        if (this.deviceConfiguration == null) {
+            this.deviceConfiguration = new PDFGraphicsConfiguration(this.width,
+                    this.height);
+        }
+        return this.deviceConfiguration;
     }
 
     /**

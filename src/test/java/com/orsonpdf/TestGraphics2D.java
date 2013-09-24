@@ -44,8 +44,8 @@ public class TestGraphics2D {
     public void setUp() {
         // to test a reference implementation, use this Graphics2D from a
         // BufferedImage in the JDK
-        //BufferedImage img = new BufferedImage(10, 20, BufferedImage.TYPE_INT_ARGB);
-        //this.g2 = img.createGraphics();
+//        BufferedImage img = new BufferedImage(10, 20, BufferedImage.TYPE_INT_ARGB);
+//        this.g2 = img.createGraphics();
  
         // Test PDFGraphics2D...
         PDFDocument pdfDoc = new PDFDocument();
@@ -257,6 +257,16 @@ public class TestGraphics2D {
         Rectangle2D r = new Rectangle2D.Double(0.25, 0.25, 0.5, 0.5);
         this.g2.setClip(r);
         assertEquals(new Rectangle(0, 0, 1, 1), this.g2.getClipBounds());       
+    }
+    
+    /**
+     * Checks that getClipBounds() returns <code>null</code> when the clip is
+     * <code>null</code>.
+     */
+    @Test
+    public void checkGetClipBoundsWhenClipIsNull() {
+        this.g2.setClip(null);
+        assertNull(this.g2.getClipBounds());
     }
 
     /**

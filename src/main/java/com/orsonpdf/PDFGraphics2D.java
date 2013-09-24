@@ -838,7 +838,8 @@ public final class PDFGraphics2D extends Graphics2D {
     }
 
     /**
-     * Returns the bounds of the user clipping region.
+     * Returns the bounds of the user clipping region.  If the user clipping
+     * region is <code>null</code>, this method will return <code>null</code>.
      * 
      * @return The clip bounds (possibly <code>null</code>). 
      * 
@@ -846,7 +847,8 @@ public final class PDFGraphics2D extends Graphics2D {
      */
     @Override
     public Rectangle getClipBounds() {
-        return getClip().getBounds();
+        Shape s = getClip();
+        return s != null ? s.getBounds() : null;
     }
 
     /**

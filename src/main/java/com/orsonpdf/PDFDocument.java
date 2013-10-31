@@ -9,7 +9,6 @@
 
 package com.orsonpdf;
 
-import com.orsonpdf.util.Args;
 import java.awt.geom.Rectangle2D;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -22,6 +21,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import com.orsonpdf.util.Args;
 
 /**
  * Represents a PDF document.  The focus of this implementation is to
@@ -85,7 +85,7 @@ public class PDFDocument {
         this.catalog = new DictionaryObject(this.nextNumber++, "/Catalog");
         this.outlines = new DictionaryObject(this.nextNumber++, "/Outlines");
         this.info = new DictionaryObject(this.nextNumber++, "/Info");
-        StringBuilder producer = new StringBuilder("(JFreeGraphics2D 1.1");
+        StringBuilder producer = new StringBuilder("(Orson PDF 1.3");
         if (EVAL_VERSION) {
             producer.append(" Evaluation Version");
         }

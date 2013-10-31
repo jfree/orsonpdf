@@ -127,14 +127,14 @@ public class PDFUtils {
     public static String toPDFDateFormat(Calendar calendar) {
         Date d = calendar.getTime(); 
         DateFormat df1 = new SimpleDateFormat("yyyyMMddHHmmss");
-        DateFormat df2 = new SimpleDateFormat("XX");
+        DateFormat df2 = new SimpleDateFormat("Z");
         String part1 = df1.format(d);
         String part2 = df2.format(d);
         String tzinfo;
         if (part2.equals("z")) {
             tzinfo = "Z00'00'";
         } else {
-            tzinfo = part2.substring(0, 3) + "'" + part2.substring(3) + "'";
+            tzinfo = part2.substring(0, 3) + "'" + part2.substring(4) + "'";
         }
         return "D:" + part1 + tzinfo;
     }

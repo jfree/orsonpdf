@@ -58,6 +58,11 @@ public class GraphicsStream extends Stream {
     private DecimalFormat geometryFormat = new DecimalFormat("0.##");
     
     /**
+     * The decimal formatter for transform matrices.
+     */
+    private DecimalFormat transformFormat = new DecimalFormat("0.######");
+    
+    /**
      * Creates a new instance.
      * 
      * @param number  the PDF object number.
@@ -99,12 +104,12 @@ public class GraphicsStream extends Stream {
      */
     void applyTransform(AffineTransform t) {
         StringBuilder b = new StringBuilder();
-        b.append(t.getScaleX()).append(" ");
-        b.append(t.getShearY()).append(" ");
-        b.append(t.getShearX()).append(" ");
-        b.append(t.getScaleY()).append(" ");
-        b.append(t.getTranslateX()).append(" ");
-        b.append(t.getTranslateY()).append(" cm\n");
+        b.append(transformDP(t.getScaleX())).append(" ");
+        b.append(transformDP(t.getShearY())).append(" ");
+        b.append(transformDP(t.getShearX())).append(" ");
+        b.append(transformDP(t.getScaleY())).append(" ");
+        b.append(transformDP(t.getTranslateX())).append(" ");
+        b.append(transformDP(t.getTranslateY())).append(" cm\n");
         addContent(b.toString());
     }
     
@@ -282,6 +287,14 @@ public class GraphicsStream extends Stream {
     private String geomDP(double d) {
         if (this.geometryFormat != null) {
             return geometryFormat.format(d);            
+        } else {
+            return String.valueOf(d);
+        }
+    }
+    
+    private String transformDP(double d) {
+        if (this.transformFormat != null) {
+            return transformFormat.format(d);            
         } else {
             return String.valueOf(d);
         }

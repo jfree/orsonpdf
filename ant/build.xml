@@ -117,6 +117,9 @@
         <copy file="${basedir}/lib/${jcommon.name}-${jcommon.version}.jar" tofile="${basedir}/distribution/lib/${jcommon.name}-${jcommon.version}.jar" />
         <copy file="${basedir}/lib/license-LGPL.txt" tofile="${basedir}/distribution/lib/license-LGPL.txt" />
 
+        <!-- copy across Ascii85OutputStream license file -->
+        <copy file="${basedir}/lib/Ascii85OutputStream-license.txt" tofile="${basedir}/distribution/lib/Ascii85OutputStream-license.txt" />
+
         <!-- copy across source files -->
         <copy todir="${basedir}/distribution/src">
             <fileset dir="${basedir}/src">

@@ -44,7 +44,7 @@ public class PDFDocument {
             PDFDocument.class.getName());
 
     /** Flag for evaluation version. */
-    private static final boolean EVAL_VERSION = true;
+    private static final boolean EVAL_VERSION = false;
     
     /** The document catalog. */
     private DictionaryObject catalog;

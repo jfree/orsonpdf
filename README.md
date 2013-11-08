@@ -45,8 +45,8 @@ Version 1.3 (8 November 2013)
 - implemented getDeviceConfiguration();
 - fixed transform bug that could result in malformed PDF output;
 - fixed a bug in the getClipBounds() method when the clip is null;
-- fixed a bug with the date formatter for the document creation date;
-- corrected the version information in the jar file;
+- corrected the Producer version info;
+- fixed a bug with the date formatter for the document creation date.
 
 Version 1.2 (12 September 2013)
 

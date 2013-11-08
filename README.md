@@ -1,7 +1,7 @@
 OrsonPDF
 ========
 
-Version 1.2, 13 September 2013
+Version 1.3, 7 November 2013
 
 (C)opyright 2013, by Object Refinery Limited.  All rights reserved.
 
@@ -12,18 +12,18 @@ OrsonPDF is a graphics library for the Java(tm) platform that allows you to gene
 
     http://www.object-refinery.com/pdf/
 
-Version 1.0 was release on 31 July 2013 and the most recent version (1.2) was released on 13 September 2013.  Changes since the initial release are listed towards the end of this file.
+Version 1.0 was release on 31 July 2013 and the most recent version (1.3) was released on 8 November 2013.  Changes since the initial release are listed towards the end of this file.
 
 
 Getting Started
 ---------------
-The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.2.jar to your classpath and start coding.
+The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.3.jar to your classpath and start coding.
 
 Oracle provides tutorials for Java2D here:
 
     http://docs.oracle.com/javase/tutorial/2d/
 
-There are some demonstration applications included in the com.orsonpdf.demo.* package.  These applications make use of JFreeChart, so you'll find two additional jars in the 'lib' directory (jfreechart-1.0.16.jar and jcommon-1.0.20.jar).  These are required for the demo code only.
+There are some demonstration applications included in the com.orsonpdf.demo.* package.  These applications make use of JFreeChart, so you'll find two additional jars in the 'lib' directory (jfreechart-1.0.16.jar and jcommon-1.0.21.jar).  These are required for the demo code only.
 
 
 License
@@ -39,6 +39,13 @@ Other code distributed with OrsonPDF:
 
 Change History
 --------------
+
+Version 1.3 (8 November 2013)
+- implemented getDeviceConfiguration();
+- fixed transform bug that could result in malformed PDF output;
+- fixed a bug in the getClipBounds() method when the clip is null;
+- fixed a bug with the date formatter for the document creation date;
+- corrected the version information in the jar file;
 
 Version 1.2 (12 September 2013)
 - fixed bug in RadialGradientPaint support.

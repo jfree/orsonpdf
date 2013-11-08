@@ -1,7 +1,7 @@
 OrsonPDF
 ========
 
-Version 1.3, 7 November 2013
+Version 1.3, 8 November 2013
 
 (C)opyright 2013, by Object Refinery Limited.  All rights reserved.
 
@@ -41,6 +41,7 @@ Change History
 --------------
 
 Version 1.3 (8 November 2013)
+
 - implemented getDeviceConfiguration();
 - fixed transform bug that could result in malformed PDF output;
 - fixed a bug in the getClipBounds() method when the clip is null;
@@ -48,6 +49,7 @@ Version 1.3 (8 November 2013)
 - corrected the version information in the jar file;
 
 Version 1.2 (12 September 2013)
+
 - fixed bug in RadialGradientPaint support.
 
 Version 1.1 (3 September 2013)

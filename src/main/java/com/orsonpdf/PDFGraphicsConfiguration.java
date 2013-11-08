@@ -55,7 +55,7 @@ public class PDFGraphicsConfiguration extends GraphicsConfiguration {
     /**
      * Returns the color model for this configuration.
      * 
-     * @return 
+     * @return The color model.
      */
     @Override
     public ColorModel getColorModel() {

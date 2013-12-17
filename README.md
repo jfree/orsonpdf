@@ -1,7 +1,7 @@
 OrsonPDF
 ========
 
-Version 1.3, 8 November 2013
+Version 1.4, 17 December 2013
 
 (C)opyright 2013, by Object Refinery Limited.  All rights reserved.
 
@@ -12,7 +12,7 @@ OrsonPDF is a graphics library for the Java(tm) platform that allows you to gene
 
     http://www.object-refinery.com/pdf/
 
-Version 1.0 was release on 31 July 2013 and the most recent version (1.3) was released on 8 November 2013.  Changes since the initial release are listed towards the end of this file.
+Version 1.0 was release on 31 July 2013 and the most recent version (1.4) was released on 17 December 2013.  Changes since the initial release are listed towards the end of this file.
 
 
 Getting Started
@@ -23,7 +23,7 @@ Oracle provides tutorials for Java2D here:
 
     http://docs.oracle.com/javase/tutorial/2d/
 
-There are some demonstration applications included in the com.orsonpdf.demo.* package.  These applications make use of JFreeChart, so you'll find two additional jars in the 'lib' directory (jfreechart-1.0.16.jar and jcommon-1.0.21.jar).  These are required for the demo code only.
+There are some demonstration applications included in the com.orsonpdf.demo.* package.  These applications make use of JFreeChart, so you'll find two additional jars in the 'lib' directory (jfreechart-1.0.17.jar and jcommon-1.0.21.jar).  These are required for the demo code only.
 
 
 License
@@ -39,6 +39,11 @@ Other code distributed with OrsonPDF:
 
 Change History
 --------------
+
+Version 1.4 (17 December 2013)
+
+- added debug mode to generate PDF file without filtering;
+- fixed a bug in the graphics stream generation that resulted in malformed PDF output in some cases.
 
 Version 1.3 (8 November 2013)
 

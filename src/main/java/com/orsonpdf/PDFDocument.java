@@ -77,7 +77,14 @@ public class PDFDocument {
      * will be added to the otherObjects list for output in the PDF bytes).
      */
     private GraphicsStream evaluationGraphicsStream;
-    
+
+    /** 
+     * A flag that is used to indicate that we are in DEBUG mode.  In this 
+     * mode, the graphics stream for a page does not have a filter applied, so
+     * the output can be read in a text editor.
+     */
+    private boolean debug;
+
     /**
      * Creates a new <code>PDFDocument</code>, initially with no content.
      */
@@ -183,6 +190,30 @@ public class PDFDocument {
             this.info.remove("Author");
         }
     }
+    
+    /**
+     * Returns the debug mode flag that controls whether or not the output 
+     * stream is filtered.
+     * 
+     * @return The debug flag.
+     * 
+     * @since 1.4
+     */
+    public boolean isDebugMode() {
+        return this.debug;
+    }
+    
+    /**
+     * Sets the debug MODE flag (this needs to be set before any call to 
+     * {@link #createPage(java.awt.geom.Rectangle2D)}).
+     * 
+     * @param debug  the new flag value.
+     * 
+     * @since 1.4
+     */
+    public void setDebugMode(boolean debug) {
+        this.debug = debug;
+    }
 
     /**
      * Creates a new <code>Page</code>, adds it to the document, and returns
@@ -193,7 +224,8 @@ public class PDFDocument {
      * @return The new page. 
      */
     public Page createPage(Rectangle2D bounds) {
-        Page page = new Page(this.nextNumber++, 0, this.pages, bounds);
+        Page page = new Page(this.nextNumber++, 0, this.pages, bounds, 
+                !this.debug);
         this.pages.add(page);
         return page;
     }
@@ -232,8 +264,8 @@ public class PDFDocument {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
             bos.write(toBytes("%PDF-1.4\n"));
-            bos.write(new byte[] { (byte) 37, (byte) 128, (byte) 129, (byte) 130, 
-                (byte) 131, (byte) 10});
+            bos.write(new byte[] { (byte) 37, (byte) 128, (byte) 129, 
+                (byte) 130, (byte) 131, (byte) 10});
             xref[obj++] = bos.size();  // offset to catalog
             bos.write(this.catalog.toPDFBytes());
             xref[obj++] = bos.size();  // offset to outlines

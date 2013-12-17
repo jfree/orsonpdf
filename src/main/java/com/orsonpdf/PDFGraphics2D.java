@@ -9,8 +9,6 @@
 
 package com.orsonpdf;
 
-import com.orsonpdf.util.Args;
-import com.orsonpdf.util.GraphicsUtils;
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -48,6 +46,8 @@ import java.awt.image.RenderedImage;
 import java.awt.image.renderable.RenderableImage;
 import java.text.AttributedCharacterIterator;
 import java.util.Map;
+import com.orsonpdf.util.Args;
+import com.orsonpdf.util.GraphicsUtils;
 
 /**
  * A <code>Graphics2D</code> implementation that writes to PDF format.  For 

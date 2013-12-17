@@ -9,16 +9,6 @@
 
 package com.orsonpdf;
 
-import com.orsonpdf.Pattern.ShadingPattern;
-import com.orsonpdf.filter.FlateFilter;
-import com.orsonpdf.shading.AxialShading;
-import com.orsonpdf.shading.RadialShading;
-import com.orsonpdf.shading.Shading;
-import com.orsonpdf.util.Args;
-import com.orsonpdf.util.GradientPaintKey;
-import com.orsonpdf.util.RadialGradientPaintKey;
-import com.orsonpdf.util.TextAnchor;
-import com.orsonpdf.util.TextUtils;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Font;
@@ -32,6 +22,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.orsonpdf.Pattern.ShadingPattern;
+import com.orsonpdf.filter.FlateFilter;
+import com.orsonpdf.shading.AxialShading;
+import com.orsonpdf.shading.RadialShading;
+import com.orsonpdf.shading.Shading;
+import com.orsonpdf.util.Args;
+import com.orsonpdf.util.GradientPaintKey;
+import com.orsonpdf.util.RadialGradientPaintKey;
+import com.orsonpdf.util.TextAnchor;
+import com.orsonpdf.util.TextUtils;
 
 /**
  * Represents a page in a {@link PDFDocument}.  Our objective is to be able
@@ -90,6 +90,25 @@ public class Page extends PDFObject {
      * @param bounds  the page bounds (<code>null</code> not permitted).
      */
     Page(int number, int generation, Pages parent, Rectangle2D bounds) {
+        this(number, generation, parent, bounds, true);
+    }
+    
+    /**
+     * Creates a new page.
+     * 
+     * @param number  the PDF object number.
+     * @param generation  the PDF object generation number.
+     * @param parent  the parent (manages the pages in the 
+     *     <code>PDFDocument</code>).
+     * @param bounds  the page bounds (<code>null</code> not permitted).
+     * @param filter  a flag that controls whether or not the graphics stream
+     *     for the page has a FlateFilter applied.
+     * 
+     * @since 1.4
+     */
+    Page(int number, int generation, Pages parent, Rectangle2D bounds, 
+            boolean filter) {
+
         super(number, generation);
         Args.nullNotPermitted(bounds, "bounds");
         this.parent = parent;
@@ -97,7 +116,9 @@ public class Page extends PDFObject {
         this.fontsOnPage = new ArrayList<String>();
         int n = this.parent.getDocument().getNextNumber();
         this.contents = new GraphicsStream(n, this);
-        this.contents.addFilter(new FlateFilter());
+        if (filter) {
+            this.contents.addFilter(new FlateFilter());
+        }
         this.gradientPaintsOnPage = new HashMap<GradientPaintKey, String>();
         this.radialGradientPaintsOnPage = new HashMap<RadialGradientPaintKey,
                 String>();

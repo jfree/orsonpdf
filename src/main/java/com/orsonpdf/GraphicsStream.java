@@ -27,6 +27,7 @@ import java.awt.geom.PathIterator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 /**
  * A <code>Stream</code> that contains graphics for the PDF document that
@@ -55,12 +56,12 @@ public class GraphicsStream extends Stream {
     /**
      * The decimal formatter for coordinates of geometrical shapes.
      */
-    private DecimalFormat geometryFormat = new DecimalFormat("0.##");
+    private DecimalFormat geometryFormat;
     
     /**
      * The decimal formatter for transform matrices.
      */
-    private DecimalFormat transformFormat = new DecimalFormat("0.######");
+    private DecimalFormat transformFormat;
     
     /**
      * Creates a new instance.
@@ -73,6 +74,11 @@ public class GraphicsStream extends Stream {
         this.page = page;
         this.content = new ByteArrayOutputStream();
         this.font = new Font("Dialog", Font.PLAIN, 12);
+        // force the formatters to use a '.' for the decimal point
+        DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+        dfs.setDecimalSeparator('.');
+        this.geometryFormat = new DecimalFormat("0.##", dfs);
+        this.transformFormat = new DecimalFormat("0.######", dfs);
     }
     
     private void addContent(String s) {

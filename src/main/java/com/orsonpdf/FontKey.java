@@ -9,9 +9,9 @@
 
 package com.orsonpdf;
 
+import java.awt.Font;
 import com.orsonpdf.util.Args;
 import com.orsonpdf.util.ObjectUtils;
-import java.awt.Font;
 
 /**
  * A key to represent a Java2D font.  This is used to maintain a mapping 
@@ -37,7 +37,7 @@ public class FontKey {
      */
     public static FontKey createFontKey(Font f) {
         Args.nullNotPermitted(f, "f");
-        String family = f.getFamily();
+        String family = f.getFamily().replace(' ', '_');
         boolean bold = f.isBold();
         boolean italic = f.isItalic();
         return new FontKey(family, bold, italic);

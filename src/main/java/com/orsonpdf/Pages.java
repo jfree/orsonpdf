@@ -120,7 +120,7 @@ public final class Pages extends PDFObject {
         PDFFont pdfFont = this.fontMap.get(fontKey);
         if (pdfFont == null) {
             int number = this.parent.getNextNumber();
-            String name = "/F" + this.nextFont + "-" + f.getFamily();
+            String name = "/F" + this.nextFont + "-" + f.getFamily().replace(' ', '_');
             String baseFont = this.fontMapper.mapToBaseFont(f);
             this.nextFont++;
             pdfFont = new PDFFont(number, 0, name, "/" + baseFont, 

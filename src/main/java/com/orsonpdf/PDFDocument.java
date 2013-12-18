@@ -260,53 +260,51 @@ public class PDFDocument {
      */
     public byte[] getPDFBytes() {
         int[] xref = new int[this.nextNumber];
-        int obj = 0;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
             bos.write(toBytes("%PDF-1.4\n"));
             bos.write(new byte[] { (byte) 37, (byte) 128, (byte) 129, 
                 (byte) 130, (byte) 131, (byte) 10});
-            xref[obj++] = bos.size();  // offset to catalog
+            xref[this.catalog.getNumber() - 1] = bos.size();  // offset to catalog
             bos.write(this.catalog.toPDFBytes());
-            xref[obj++] = bos.size();  // offset to outlines
+            xref[this.outlines.getNumber() - 1] = bos.size();  // offset to outlines
             bos.write(this.outlines.toPDFBytes());            
-            xref[obj++] = bos.size();  // offset to info
+            xref[this.info.getNumber() - 1] = bos.size();  // offset to info
             bos.write(this.info.toPDFBytes());
-            xref[obj++] = bos.size();  // offset to pages
+            xref[this.pages.getNumber() - 1] = bos.size();  // offset to pages
             bos.write(this.pages.toPDFBytes());
-            xref[obj++] = bos.size();
             for (Page page : this.pages.getPages()) {
+                xref[page.getNumber() - 1] = bos.size();
                 bos.write(page.toPDFBytes());
-                xref[obj++] = bos.size();
                 PDFObject contents = page.getContents();
+                xref[contents.getNumber() - 1] = bos.size();
                 bos.write(contents.toPDFBytes());
-                xref[obj++] = bos.size();
             }
             for (PDFFont font: this.pages.getFonts()) {
+                xref[font.getNumber() - 1] = bos.size();
                 bos.write(font.toPDFBytes());
-                xref[obj++] = bos.size();
             }
             for (PDFObject object: this.otherObjects) {
+                xref[object.getNumber() - 1] = bos.size();
                 bos.write(object.toPDFBytes());
-                xref[obj++] = bos.size();
             }
-            
+            xref[xref.length - 1] = bos.size();
             // write the xref table
             bos.write(toBytes("xref\n"));
-            bos.write(toBytes("0 " + String.valueOf(this.nextNumber - 1) 
+            bos.write(toBytes("0 " + String.valueOf(this.nextNumber) 
                     + "\n"));
-            bos.write(toBytes("0000000000 65535 f\n"));
+            bos.write(toBytes("0000000000 65535 f \n"));
             for (int i = 0; i < this.nextNumber - 1; i++) {
                 String offset = String.valueOf(xref[i]);
                 int len = offset.length();
                 String offset10 = "0000000000".substring(len) + offset;
-                bos.write(toBytes(offset10 + " 00000 n\n"));
+                bos.write(toBytes(offset10 + " 00000 n \n"));
             }
   
             // write the trailer
             bos.write(toBytes("trailer\n"));
             Dictionary trailer = new Dictionary();
-            trailer.put("/Size", Integer.valueOf(this.nextNumber - 1));
+            trailer.put("/Size", Integer.valueOf(this.nextNumber));
             trailer.put("/Root", this.catalog);
             trailer.put("/Info", this.info);
             bos.write(trailer.toPDFBytes());

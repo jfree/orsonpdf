@@ -9,9 +9,6 @@
 
 package com.orsonpdf.demo;
 
-import com.orsonpdf.PDFDocument;
-import com.orsonpdf.PDFGraphics2D;
-import com.orsonpdf.Page;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Rectangle;
@@ -30,6 +27,9 @@ import org.jfree.chart.renderer.category.StatisticalBarRenderer;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.statistics.DefaultStatisticalCategoryDataset;
 import org.jfree.ui.TextAnchor;
+import com.orsonpdf.PDFDocument;
+import com.orsonpdf.PDFGraphics2D;
+import com.orsonpdf.Page;
 
 /**
  * A demo for PDF output of a bar chart.

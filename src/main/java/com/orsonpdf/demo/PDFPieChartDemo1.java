@@ -9,9 +9,6 @@
 
 package com.orsonpdf.demo;
 
-import com.orsonpdf.PDFDocument;
-import com.orsonpdf.PDFGraphics2D;
-import com.orsonpdf.Page;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -30,6 +27,9 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.ui.HorizontalAlignment;
 import org.jfree.ui.RectangleEdge;
+import com.orsonpdf.PDFDocument;
+import com.orsonpdf.PDFGraphics2D;
+import com.orsonpdf.Page;
 
 /**
  * A demo/test for a pie chart.

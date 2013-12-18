@@ -1,7 +1,7 @@
 OrsonPDF
 ========
 
-Version 1.4, 17 December 2013
+Version 1.4, 18 December 2013
 
 (C)opyright 2013, by Object Refinery Limited.  All rights reserved.
 
@@ -12,7 +12,7 @@ OrsonPDF is a graphics library for the Java(tm) platform that allows you to gene
 
     http://www.object-refinery.com/pdf/
 
-Version 1.0 was release on 31 July 2013 and the most recent version (1.4) was released on 17 December 2013.  Changes since the initial release are listed towards the end of this file.
+Version 1.0 was release on 31 July 2013 and the most recent version (1.4) was released on 18 December 2013.  Changes since the initial release are listed towards the end of this file.
 
 
 Getting Started
@@ -40,10 +40,12 @@ Other code distributed with OrsonPDF:
 Change History
 --------------
 
-Version 1.4 (17 December 2013)
+Version 1.4 (18 December 2013)
 
+- fixed invalid XREF table which caused Acrobat Reader to prompt for saving when closing PDFs;
 - added debug mode to generate PDF file without filtering;
-- fixed a bug in the graphics stream generation that resulted in malformed PDF output in some cases.
+- fixed a bug in the graphics stream generation that resulted in malformed PDF output in some locales.
+
 
 Version 1.3 (8 November 2013)
 
@@ -53,9 +55,11 @@ Version 1.3 (8 November 2013)
 - corrected the Producer version info;
 - fixed a bug with the date formatter for the document creation date.
 
+
 Version 1.2 (12 September 2013)
 
 - fixed bug in RadialGradientPaint support.
+
 
 Version 1.1 (3 September 2013)
 
@@ -65,6 +69,7 @@ Version 1.1 (3 September 2013)
 - fixed bug affecting switch between GradientPaint and Color;
 - fixed clipping bug;
 - moved PDF classes into OrsonPDF project (changing the root package to com.orsonpdf.*);
+
 
 Version 1.0 (31 July 2013)
 

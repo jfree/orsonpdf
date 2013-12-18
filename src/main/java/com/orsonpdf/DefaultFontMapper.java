@@ -39,10 +39,10 @@ public class DefaultFontMapper implements FontMapper {
         this.map.put(new FontKey("Courier", true, false), PDFFont.COURIER_BOLD);
         this.map.put(new FontKey("Courier", false, true), PDFFont.COURIER_ITALIC);
         this.map.put(new FontKey("Courier", true, true), PDFFont.COURIER_BOLDITALIC);
-        this.map.put(new FontKey("Courier New", false, false), PDFFont.COURIER);
-        this.map.put(new FontKey("Courier New", true, false), PDFFont.COURIER_BOLD);
-        this.map.put(new FontKey("Courier New", false, true), PDFFont.COURIER_ITALIC);
-        this.map.put(new FontKey("Courier New", true, true), PDFFont.COURIER_BOLDITALIC);
+        this.map.put(new FontKey("Courier_New", false, false), PDFFont.COURIER);
+        this.map.put(new FontKey("Courier_New", true, false), PDFFont.COURIER_BOLD);
+        this.map.put(new FontKey("Courier_New", false, true), PDFFont.COURIER_ITALIC);
+        this.map.put(new FontKey("Courier_New", true, true), PDFFont.COURIER_BOLDITALIC);
         this.map.put(new FontKey("DialogInput", false, false), PDFFont.HELVETICA);
         this.map.put(new FontKey("DialogInput", true, false), PDFFont.HELVETICA_BOLD);
         this.map.put(new FontKey("DialogInput", false, true), PDFFont.HELVETICA_OBLIQUE);
@@ -67,17 +67,16 @@ public class DefaultFontMapper implements FontMapper {
         this.map.put(new FontKey("Tahoma", true, false), PDFFont.TIMES_BOLD);
         this.map.put(new FontKey("Tahoma", false, true), PDFFont.TIMES_ITALIC);
         this.map.put(new FontKey("Tahoma", true, true), PDFFont.TIMES_BOLDITALIC);
-        this.map.put(new FontKey("Times New Roman", false, false), PDFFont.TIMES_ROMAN);
-        this.map.put(new FontKey("Times New Roman", true, false), PDFFont.TIMES_BOLD);
-        this.map.put(new FontKey("Times New Roman", false, true), PDFFont.TIMES_ITALIC);
-        this.map.put(new FontKey("Times New Roman", true, true), PDFFont.TIMES_BOLDITALIC);
+        this.map.put(new FontKey("Times_New_Roman", false, false), PDFFont.TIMES_ROMAN);
+        this.map.put(new FontKey("Times_New_Roman", true, false), PDFFont.TIMES_BOLD);
+        this.map.put(new FontKey("Times_New_Roman", false, true), PDFFont.TIMES_ITALIC);
+        this.map.put(new FontKey("Times_New_Roman", true, true), PDFFont.TIMES_BOLDITALIC);
     }
     
     @Override
     public String mapToBaseFont(Font f) {
         String result = this.map.get(FontKey.createFontKey(f));
         if (result == null) {
-            System.out.println("FONT = " + f);
             result = "Courier";
         }
         return result;

@@ -9,9 +9,9 @@
 
 package com.orsonpdf;
 
+import java.awt.geom.AffineTransform;
 import com.orsonpdf.shading.Shading;
 import com.orsonpdf.util.Args;
-import java.awt.geom.AffineTransform;
 
 /**
  * A pattern object (see the concrete subclass {@link ShadingPattern}).

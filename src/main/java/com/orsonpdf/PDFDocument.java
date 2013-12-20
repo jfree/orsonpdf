@@ -43,6 +43,9 @@ public class PDFDocument {
     private static final Logger LOGGER = Logger.getLogger(
             PDFDocument.class.getName());
 
+    /** Producer string. */
+    private static final String PRODUCER = "OrsonPDF 1.5";
+    
     /** Flag for evaluation version. */
     private static final boolean EVAL_VERSION = false;
     
@@ -92,7 +95,7 @@ public class PDFDocument {
         this.catalog = new DictionaryObject(this.nextNumber++, "/Catalog");
         this.outlines = new DictionaryObject(this.nextNumber++, "/Outlines");
         this.info = new DictionaryObject(this.nextNumber++, "/Info");
-        StringBuilder producer = new StringBuilder("(Orson PDF 1.3");
+        StringBuilder producer = new StringBuilder("(").append(PRODUCER);
         if (EVAL_VERSION) {
             producer.append(" Evaluation Version");
         }

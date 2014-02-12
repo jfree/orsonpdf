@@ -45,6 +45,7 @@ import java.awt.image.ImageObserver;
 import java.awt.image.RenderedImage;
 import java.awt.image.renderable.RenderableImage;
 import java.text.AttributedCharacterIterator;
+import java.text.AttributedString;
 import java.util.Map;
 import com.orsonpdf.util.Args;
 import com.orsonpdf.util.GraphicsUtils;
@@ -566,10 +567,21 @@ public final class PDFGraphics2D extends Graphics2D {
         if (this.clip != null) {
             this.gs.pushGraphicsState();
             this.gs.applyClip(invTransformedClip(this.clip));
-            this.gs.drawString(str, x, y);            
-            this.gs.popGraphicsState();
-        } else {
+        }
+
+        // the following hint allows the user to switch between standard
+        // text output and drawing text as vector graphics
+        if (!PDFHints.VALUE_DRAW_STRING_TYPE_VECTOR.equals(
+                this.hints.get(PDFHints.KEY_DRAW_STRING_TYPE))) {
             this.gs.drawString(str, x, y);
+        } else {
+            AttributedString as = new AttributedString(str, 
+                    this.font.getAttributes());
+            drawString(as.getIterator(), x, y);
+        }
+        
+        if (this.clip != null) {
+            this.gs.popGraphicsState();
         }
     }
 

@@ -4,7 +4,8 @@
  * 
  * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
  *
- * Project Info:  http://www.object-refinery.com/pdf/index.html
+ * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
  */
 
 package com.orsonpdf;
@@ -30,9 +31,9 @@ public final class PDFHints {
     /**
      * The key for the hint that controls whether strings are rendered as
      * characters (standard PDF output) or vector graphics (implemented using 
-     * {@link TextLayout}).  The latter will result in larger output files but 
+     * <code>TextLayout</code>).  The latter will result in larger output files but 
      * permits rendering Unicode characters without font embedding (which is 
-     * not supported by <strong>OrsonPDF</code> at this point).  Valid hint 
+     * not supported by <strong>OrsonPDF</strong> at this point).  Valid hint 
      * values are {@link #VALUE_DRAW_STRING_TYPE_STANDARD} and 
      * {@link #VALUE_DRAW_STRING_TYPE_VECTOR}.
      */

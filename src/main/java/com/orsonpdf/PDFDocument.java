@@ -48,7 +48,7 @@ public class PDFDocument {
     private static final String PRODUCER = "OrsonPDF 1.5";
     
     /** Flag for evaluation version. */
-    private static final boolean EVAL_VERSION = false;
+    private static final boolean EVAL_VERSION = true;
     
     /** The document catalog. */
     private DictionaryObject catalog;

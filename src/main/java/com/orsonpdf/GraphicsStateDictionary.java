@@ -29,7 +29,7 @@ public class GraphicsStateDictionary extends DictionaryObject {
     }
     
     /**
-     * Returns the stroke alpha.
+     * Returns the stroke alpha (in the range 0.0 to 1.0).
      * 
      * @return The stroke alpha. 
      */
@@ -40,7 +40,7 @@ public class GraphicsStateDictionary extends DictionaryObject {
     /**
      * Sets the stroke alpha.
      * 
-     * @param alpha  the stroke alpha. 
+     * @param alpha  the stroke alpha (in the range 0.0 to 1.0). 
      */
     public void setStrokeAlpha(float alpha) {
         this.strokeAlpha = alpha;
@@ -48,7 +48,7 @@ public class GraphicsStateDictionary extends DictionaryObject {
     }
     
     /**
-     * Returns the non-stroke alpha.
+     * Returns the non-stroke alpha (a value in the range 0.0 to 1.0).
      * 
      * @return The non-stroke alpha. 
      */
@@ -59,7 +59,7 @@ public class GraphicsStateDictionary extends DictionaryObject {
     /**
      * Sets the non-stroke alpha.
      * 
-     * @param alpha  the new alpha value. 
+     * @param alpha  the new alpha value (in the range 0.0 to 1.0). 
      */
     public void setNonStrokeAlpha(float alpha) {
         this.nonStrokeAlpha = alpha;

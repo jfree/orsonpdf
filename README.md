@@ -1,9 +1,9 @@
 OrsonPDF
 ========
 
-Version 1.4, 18 December 2013
+Version 1.5, 4 March 2014
 
-(C)opyright 2013, by Object Refinery Limited.  All rights reserved.
+(C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
 
 
 Overview
@@ -12,12 +12,12 @@ OrsonPDF is a graphics library for the Java(tm) platform that allows you to gene
 
     http://www.object-refinery.com/pdf/
 
-Version 1.0 was release on 31 July 2013 and the most recent version (1.4) was released on 18 December 2013.  Changes since the initial release are listed towards the end of this file.
+Version 1.0 was release on 31 July 2013 and the most recent version (1.5) was released on 4 March 2014.  Changes since the initial release are listed towards the end of this file.
 
 
 Getting Started
 ---------------
-The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.3.jar to your classpath and start coding.
+The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.5.jar to your classpath and start coding.
 
 Oracle provides tutorials for Java2D here:
 
@@ -39,6 +39,13 @@ Other code distributed with OrsonPDF:
 
 Change History
 --------------
+
+Version 1.5 (5 March 2014)
+
+- added rendering hint DRAW_STRING_TYPE which provides an option to render text as vector graphics, which allows the inclusion of Unicode characters in the output without font embedding;
+- improve support for alpha transparency;
+- minor additions to default font mapping.
+
 
 Version 1.4 (18 December 2013)
 

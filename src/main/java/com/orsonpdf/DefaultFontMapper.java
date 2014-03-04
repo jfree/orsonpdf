@@ -16,8 +16,8 @@ import java.util.Map;
 
 /**
  * A class that can be used to map AWT/Java2D fonts to PDF built-in font names.
- * This is a very minimal way to support fonts in our <code>PDFGraphics2D</code> 
- * implementation...hope to improve it later.
+ * This is a very minimal way to support fonts in this <code>PDFGraphics2D</code> 
+ * implementation.
  */
 public class DefaultFontMapper implements FontMapper {
 
@@ -48,6 +48,10 @@ public class DefaultFontMapper implements FontMapper {
         this.map.put(new FontKey("DialogInput", true, false), PDFFont.HELVETICA_BOLD);
         this.map.put(new FontKey("DialogInput", false, true), PDFFont.HELVETICA_OBLIQUE);
         this.map.put(new FontKey("DialogInput", true, true), PDFFont.HELVETICA_BOLDOBLIQUE);
+        this.map.put(new FontKey("MgOpen_Cosmetica", false, false), PDFFont.TIMES_ROMAN);
+        this.map.put(new FontKey("MgOpen_Cosmetica", true, false), PDFFont.TIMES_BOLD);
+        this.map.put(new FontKey("MgOpen_Cosmetica", false, true), PDFFont.TIMES_ITALIC);
+        this.map.put(new FontKey("MgOpen_Cosmetica", true, true), PDFFont.TIMES_BOLDITALIC);
         this.map.put(new FontKey("Monospaced", false, false), PDFFont.COURIER);
         this.map.put(new FontKey("Monospaced", true, false), PDFFont.COURIER_BOLD);
         this.map.put(new FontKey("Monospaced", false, true), PDFFont.COURIER_ITALIC);

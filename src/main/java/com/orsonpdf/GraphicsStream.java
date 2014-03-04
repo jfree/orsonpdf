@@ -284,14 +284,27 @@ public class GraphicsStream extends Stream {
         b.append(patternName).append(" scn\n");
         addContent(b.toString());
     }
-    
+
+    private float alphaFactor = 1.0f;
     /**
      * Applies the specified alpha composite.
      * 
      * @param alphaComp  the alpha composite (<code>null</code> not permitted). 
      */
     void applyComposite(AlphaComposite alphaComp) {
-        applyAlpha((int) (alphaComp.getAlpha() * 255f));
+        if (alphaComp == null) {
+            this.alphaFactor = 1.0f;
+        } else {
+            this.alphaFactor = alphaComp.getAlpha();
+            int a = (int) (alphaComp.getAlpha() * 255f);
+            if (this.alpha != a) {
+                String name = this.page.findOrCreateGSDictionary(a);
+                StringBuilder b = new StringBuilder();
+                b.append(name).append(" gs\n");
+                addContent(b.toString());
+                this.alpha = a;
+            }
+        }
     }
     
     /**
@@ -300,12 +313,13 @@ public class GraphicsStream extends Stream {
      * @param alpha  the new alpha value (in the range 0 to 255). 
      */
     void applyAlpha(int alpha) {
-        if (this.alpha != alpha) {
-            String name = this.page.findOrCreateGSDictionary(alpha);
+        int a = (int) (alpha * this.alphaFactor);
+        if (this.alpha != a) {
+            String name = this.page.findOrCreateGSDictionary(a);
             StringBuilder b = new StringBuilder();
             b.append(name).append(" gs\n");
             addContent(b.toString());
-            this.alpha = alpha;
+            this.alpha = a;
         }
     }
     

@@ -10,7 +10,6 @@
 
 package com.orsonpdf;
 
-import com.orsonpdf.util.Args;
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -29,14 +28,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import com.orsonpdf.util.Args;
 
 /**
  * A <code>Stream</code> that contains graphics for the PDF document that
  * can be generated via the {@link PDFGraphics2D} class.  The {@link Page}
  * class will create a <code>GraphicsStream</code> instance to represent its
  * content.  You don't normally interact directly with this class, it is 
- * intended that the PDFGraphics2D class drives the calls to the methods of
- * this class.
+ * intended that the <code>PDFGraphics2D</code> class drives the calls to the 
+ * methods of this class.
  */
 public class GraphicsStream extends Stream {
 
@@ -51,6 +51,9 @@ public class GraphicsStream extends Stream {
     
     /** The most recent font applied. */
     private Font font;
+    
+    /** The most recent alpha transparency value (in the range 0 to 255). */
+    private int alpha;
     
     private AffineTransform prevTransInv;
     
@@ -75,6 +78,7 @@ public class GraphicsStream extends Stream {
         this.page = page;
         this.content = new ByteArrayOutputStream();
         this.font = new Font("Dialog", Font.PLAIN, 12);
+        this.alpha = 255;
         // force the formatters to use a '.' for the decimal point
         DecimalFormatSymbols dfs = new DecimalFormatSymbols();
         dfs.setDecimalSeparator('.');
@@ -210,6 +214,7 @@ public class GraphicsStream extends Stream {
         b.append(red).append(" ").append(green).append(" ").append(blue)
                 .append(" RG\n");
         addContent(b.toString());
+        applyAlpha(c.getAlpha());
     }
     
     /**
@@ -225,6 +230,7 @@ public class GraphicsStream extends Stream {
         b.append(red).append(" ").append(green).append(" ").append(blue)
                 .append(" rg\n");
         addContent(b.toString());
+        applyAlpha(c.getAlpha());
     }
     
     /**
@@ -285,10 +291,22 @@ public class GraphicsStream extends Stream {
      * @param alphaComp  the alpha composite (<code>null</code> not permitted). 
      */
     void applyComposite(AlphaComposite alphaComp) {
-        String name = this.page.findOrCreateGSDictionary(alphaComp);
-        StringBuilder b = new StringBuilder();
-        b.append(name).append(" gs\n");
-        addContent(b.toString());
+        applyAlpha((int) (alphaComp.getAlpha() * 255f));
+    }
+    
+    /**
+     * Applies the alpha transparency.
+     * 
+     * @param alpha  the new alpha value (in the range 0 to 255). 
+     */
+    void applyAlpha(int alpha) {
+        if (this.alpha != alpha) {
+            String name = this.page.findOrCreateGSDictionary(alpha);
+            StringBuilder b = new StringBuilder();
+            b.append(name).append(" gs\n");
+            addContent(b.toString());
+            this.alpha = alpha;
+        }
     }
     
     private String geomDP(double d) {

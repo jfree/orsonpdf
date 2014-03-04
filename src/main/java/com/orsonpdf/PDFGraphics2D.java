@@ -313,6 +313,8 @@ public final class PDFGraphics2D extends Graphics2D {
         if (comp instanceof AlphaComposite) {
             AlphaComposite ac = (AlphaComposite) comp;
             this.gs.applyComposite(ac);
+        } else {
+            this.gs.applyComposite(null);
         }
     }
     

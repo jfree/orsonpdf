@@ -100,5 +100,21 @@ public class FontKey {
         hash = 97 * hash + (this.isItalic ? 1 : 0);
         return hash;
     }
+    
+    /**
+     * Returns a string representation of this instance, primarily for
+     * debugging purposes.
+     * 
+     * @return A string.
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("FontKey[name=").append(this.name);
+        sb.append(",isBold=").append(this.isBold);
+        sb.append(",isItalic=").append(this.isItalic);
+        sb.append("]");
+        return sb.toString();
+    }
 
 }

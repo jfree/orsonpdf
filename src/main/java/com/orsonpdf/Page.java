@@ -10,7 +10,6 @@
 
 package com.orsonpdf;
 
-import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GradientPaint;
@@ -312,31 +311,32 @@ public class Page extends PDFObject {
         }
     }
     
-    private Map<AlphaComposite, String> alphaDictionaries 
-            = new HashMap<AlphaComposite, String>();
+    private Map<Integer, String> alphaDictionaries 
+            = new HashMap<Integer, String>();
     
     /**
      * Returns the name of the Graphics State Dictionary that can be used
-     * for the specified alpha composite - if there is no existing dictionary
+     * for the specified alpha value - if there is no existing dictionary
      * then a new one is created.
      * 
-     * @param alphaComp  the alpha composite (<code>null</code> not permitted).
+     * @param alpha  the alpha value in the range 0 to 255.
      * 
      * @return The graphics state dictionary reference. 
      */
-    String findOrCreateGSDictionary(AlphaComposite alphaComp) {
-        Args.nullNotPermitted(alphaComp, "alphaComp");
-        String name = this.alphaDictionaries.get(alphaComp);
+    String findOrCreateGSDictionary(int alpha) {
+        Integer key = Integer.valueOf(alpha);
+        float alphaValue = alpha / 255f;
+        String name = this.alphaDictionaries.get(key);
         if (name == null) {
             PDFDocument pdfDoc = this.parent.getDocument();
             GraphicsStateDictionary gsd = new GraphicsStateDictionary(
                     pdfDoc.getNextNumber());
-            gsd.setNonStrokeAlpha(alphaComp.getAlpha());
-            gsd.setStrokeAlpha(alphaComp.getAlpha());
+            gsd.setNonStrokeAlpha(alphaValue);
+            gsd.setStrokeAlpha(alphaValue);
             pdfDoc.addObject(gsd);
             name = "/GS" + (this.graphicsStates.size() + 1);
             this.graphicsStates.put(name, gsd);
-            this.alphaDictionaries.put(alphaComp, name);
+            this.alphaDictionaries.put(key, name);
         }
         return name;
     }

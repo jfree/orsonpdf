@@ -439,6 +439,10 @@ public final class PDFGraphics2D extends Graphics2D {
      */
     @Override
     public void draw(Shape s) {
+        if (!(this.stroke instanceof BasicStroke)) {
+            fill(this.stroke.createStrokedShape(s));
+            return;
+        }
         if (s instanceof Line2D) {
             if (this.clip != null) {
                 this.gs.pushGraphicsState();

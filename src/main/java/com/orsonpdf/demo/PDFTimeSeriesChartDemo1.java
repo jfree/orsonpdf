@@ -30,6 +30,7 @@ import org.jfree.data.xy.XYDataset;
 import org.jfree.ui.HorizontalAlignment;
 import com.orsonpdf.PDFDocument;
 import com.orsonpdf.PDFGraphics2D;
+import com.orsonpdf.PDFHints;
 import com.orsonpdf.Page;
 
 /**
@@ -88,9 +89,7 @@ public class PDFTimeSeriesChartDemo1 {
             renderer.setSeriesPaint(5, new Color(0, 55, 122));
             renderer.setSeriesPaint(6, new Color(0, 92, 165));
         }
-
         return chart;
-
     }
 
     /**
@@ -99,7 +98,6 @@ public class PDFTimeSeriesChartDemo1 {
      * @return the dataset.
      */
     private static XYDataset createDataset() {
-
         TimeSeries s1 = new TimeSeries("Indicator Price");
         s1.add(new Month(1, 2010), 126.80);
         s1.add(new Month(2, 2010), 123.37);
@@ -412,6 +410,8 @@ public class PDFTimeSeriesChartDemo1 {
         pdfDoc.setAuthor("Object Refinery Limited");
         Page page = pdfDoc.createPage(new Rectangle(612, 468));
         PDFGraphics2D g2 = page.getGraphics2D();
+        g2.setRenderingHint(PDFHints.KEY_DRAW_STRING_TYPE, 
+                PDFHints.VALUE_DRAW_STRING_TYPE_VECTOR);
         chart.draw(g2, new Rectangle(0, 0, 612, 468));
         File f = new File("PDFTimeSeriesChartDemo1.pdf");
         pdfDoc.writeToFile(f);

@@ -1,5 +1,5 @@
 /**
- * Contains {@link com.orsonpdf.PDFGraphics2D} and supporting 
- * classes to allow Java2D rendering to Adobe's Portable Document Format (PDF).
+ * Contains shading classes that support the {@link com.orsonpdf.PDFGraphics2D} 
+ * implementation.
  */
-package com.orsonpdf;
+package com.orsonpdf.shading;

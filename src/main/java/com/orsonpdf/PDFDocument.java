@@ -45,10 +45,10 @@ public class PDFDocument {
             PDFDocument.class.getName());
 
     /** Producer string. */
-    private static final String PRODUCER = "OrsonPDF 1.6";
+    private static final String PRODUCER = "OrsonPDF 1.6-eval";
     
     /** Flag for evaluation version. */
-    private static final boolean EVAL_VERSION = false;
+    private static final boolean EVAL_VERSION = true;
     
     /** The document catalog. */
     private DictionaryObject catalog;

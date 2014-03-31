@@ -14,7 +14,7 @@
     <target name="initialise" description="Initialise required settings.">
         <tstamp />
         <property name="orsonpdf.name" value="orsonpdf" />
-        <property name="orsonpdf.version" value="1.6-eval" />
+        <property name="orsonpdf.version" value="1.6" />
         <property name="jfreechart.name" value="jfreechart" />
         <property name="jfreechart.version" value="1.0.17" />
         <property name="jcommon.name" value="jcommon" />
@@ -39,7 +39,7 @@
 
         <!-- compile the source -->
         <javac srcdir="${basedir}/src/main/java"
-               excludes="com/orsonpdf/demo/**"
+               excludes="com/orsonpdf/demo/**,com/orsonpdf/font/**"
                destdir="${basedir}/build"
                debug="on"
                deprecation="true"
@@ -80,7 +80,7 @@
                  splitindex="yes">
             <classpath refid="build.classpath" />
             <packageset dir="${basedir}/src/main/java"
-               excludes="com/orsonpdf/demo" >
+               excludes="com/orsonpdf/demo com/orsonpdf/font" >
             </packageset>
         </javadoc>
     </target>
@@ -123,7 +123,7 @@
         <!-- copy across source files -->
         <copy todir="${basedir}/distribution/src">
             <fileset dir="${basedir}/src">
-                <exclude name="test/**"/>
+                <exclude name="test/** com/orsonpdf/font/**"/>
             </fileset>
         </copy>
 

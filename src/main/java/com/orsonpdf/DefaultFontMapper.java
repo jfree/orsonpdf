@@ -16,12 +16,18 @@ import java.util.Map;
 
 /**
  * A class that can be used to map AWT/Java2D fonts to PDF built-in font names.
- * This is a very minimal way to support fonts in this <code>PDFGraphics2D</code> 
- * implementation.
+ * This is a very minimal way to support fonts in this 
+ * <code>PDFGraphics2D</code> implementation.
+ * <br><br>
+ * Note that there is an option to draw text as vector graphics which you can
+ * specify using the rendering hint {@link PDFHints#KEY_DRAW_STRING_TYPE}.
+ * This can be useful, for example, if you need to display characters (such
+ * as the euro symbol) that are not supported by the PDF built-in fonts.
+ * 
  */
 public class DefaultFontMapper implements FontMapper {
 
-    private Map<FontKey, String> map;
+    private final Map<FontKey, String> map;
     
     /**
      * Creates a new instance.

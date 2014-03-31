@@ -37,7 +37,7 @@ import com.orsonpdf.util.Args;
  * <code>pdfDoc.writeToFile(new File("demo.pdf"));<br></code>
  * <p>
  * The implementation is light-weight and works very well alongside packages 
- * such as <b>JFreeChart</b>.
+ * such as <b>JFreeChart</b> and <b>Orson Charts</b>.
  */
 public class PDFDocument {
     

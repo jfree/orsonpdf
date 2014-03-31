@@ -24,6 +24,10 @@ import java.text.AttributedString;
  */
 public class TextUtils {
 
+    private TextUtils() {
+        // no need to instantiate this.
+    }
+    
     /**
      * Draws a string such that the specified anchor point is aligned to the
      * given (x, y) location.

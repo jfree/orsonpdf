@@ -178,15 +178,15 @@ public final class PDFGraphics2D extends Graphics2D {
     @Override
     public Graphics create() {
         PDFGraphics2D copy = new PDFGraphics2D(this.gs, this.width, 
-                this.height);
+                this.height, true);
         copy.setRenderingHints(getRenderingHints());
+        copy.setTransform(getTransform());
         copy.setClip(getClip());
         copy.setPaint(getPaint());
         copy.setColor(getColor());
         copy.setComposite(getComposite());
         copy.setStroke(getStroke());
         copy.setFont(getFont());
-        copy.setTransform(getTransform());
         copy.setBackground(getBackground());
         return copy;
     }

@@ -1,9 +1,9 @@
 OrsonPDF
 ========
 
-Version 1.6, 31 March 2014
+Version 1.7, 19 May 2015
 
-(C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+(C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
 
 
 Overview
@@ -12,12 +12,12 @@ OrsonPDF is a graphics library for the Java(tm) platform that allows you to gene
 
     http://www.object-refinery.com/pdf/
 
-Version 1.0 was release on 31 July 2013 and the most recent version (1.6) was released on 31 March 2014.  Changes since the initial release are listed towards the end of this file.
+Version 1.0 was release on 31 July 2013 and the most recent version (1.7) was released on 19 May 2015.  Changes since the initial release are listed towards the end of this file.
 
 
 Getting Started
 ---------------
-The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.6.jar to your classpath and start coding.
+The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.7.jar to your classpath and start coding.
 
 Oracle provides tutorials for Java2D here:
 
@@ -26,9 +26,9 @@ Oracle provides tutorials for Java2D here:
 There are some demonstration applications included in the com.orsonpdf.demo.* package.  These applications make use of JFreeChart, so you'll find two additional jars in the 'lib' directory (jfreechart-1.0.17.jar and jcommon-1.0.21.jar).  These are required for the demo code only.
 
 
-License
--------
-OrsonPDF is proprietary software.  The evaluation version is free, but places a watermark on any PDF files generated.  You can purchase a license from Object Refinery Limited and obtain a version without the watermark for inclusion in your own projects.
+Dual Licensing
+--------------
+OrsonPDF is dual licensed.  You can use OrsonPDF under the terms of the GNU General Public License version 3 (GPLv3) or later.  If you prefer not to be bound by the terms of the GPLv3, there is an option to buy a commercial license from Object Refinery Limited - see the OrsonPDF web page for details.
 
 Other code distributed with OrsonPDF:
 
@@ -39,6 +39,13 @@ Other code distributed with OrsonPDF:
 
 Change History
 --------------
+
+Version 1.7 (19 May 2015)
+
+- implemented PDFGraphics2D.create() method;
+- fixed broken PDFGraphics2D.drawImage() method;
+- added GPLv3 or later as a license option.
+
 
 Version 1.6 (31 March 2014)
 

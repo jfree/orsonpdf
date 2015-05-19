@@ -738,7 +738,7 @@ public final class PDFGraphics2D extends Graphics2D {
     /**
      * Applies a shear transformation. This is equivalent to the following 
      * call to the {@code transform} method:
-     * <p>
+     *
      * <ul><li>
      * {@code transform(AffineTransform.getShearInstance(shx, shy));}
      * </ul>

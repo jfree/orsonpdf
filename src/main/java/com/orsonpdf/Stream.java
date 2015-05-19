@@ -63,7 +63,7 @@ public abstract class Stream extends PDFObject {
      * 
      * @return The PDF bytes for this stream object.
      * 
-     * @throws IOException 
+     * @throws IOException  if there is a problem writing to the byte array.
      */
     @Override
     public byte[] getObjectBytes() throws IOException {

@@ -70,6 +70,7 @@ public class Ascii85OutputStream extends FilterOutputStream {
      * with of 72 characters and not using the space character compression
      * option. Call <code>flush()</code> to add the padding and end the ascii85
      * block.
+     * @param out  the output stream.
      */
     public Ascii85OutputStream(OutputStream out) {
         super(out);
@@ -79,6 +80,7 @@ public class Ascii85OutputStream extends FilterOutputStream {
      * Creates an output stream to encode ascii85 data, using a default line
      * width of 72 characters. Call <code>flush()</code> to end the ascii85
      * block.
+     * @param out  the output stream.
      * @param useSpaceCompression Whether to use space character compression in
      * the output.
      */
@@ -90,6 +92,7 @@ public class Ascii85OutputStream extends FilterOutputStream {
     /**
      * Creates an output stream to encode ascii85 data. Call
      * <code>flush()</code> to end the ascii85 block.
+     * @param out  the output stream.
      * @param width The maximum line width of the encoded output text.
      * Whitespace characters are ignored when decoding.
      * @param useSpaceCompression Whether to use space character compression in

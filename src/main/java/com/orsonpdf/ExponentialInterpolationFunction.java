@@ -47,8 +47,8 @@ public final class ExponentialInterpolationFunction extends Function {
      * Creates a new function.
      * 
      * @param number  the PDF object number.
-     * @param c0  
-     * @param c1 
+     * @param c0  the function result at 0.0.
+     * @param c1  the function result at 1.0.
      */
     public ExponentialInterpolationFunction(int number, float[] c0, 
             float[] c1) {

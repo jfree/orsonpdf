@@ -104,7 +104,7 @@ public abstract class PDFObject {
      * 
      * @return The PDF bytes representing this object.
      * 
-     * @throws IOException 
+     * @throws IOException if there is a problem writing to the byte array.
      */
     public byte[] toPDFBytes() throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -119,6 +119,7 @@ public abstract class PDFObject {
      * PDF output for this object.
      * 
      * @return A byte array.
+     * @throws IOException if there is a problem writing to the byte array.
      */
     public abstract byte[] getObjectBytes() throws IOException;
     

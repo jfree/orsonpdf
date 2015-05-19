@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -13,20 +35,20 @@ package com.orsonpdf.util;
 import java.awt.GradientPaint;
 
 /**
- * A wrapper for a <code>GradientPaint</code> that can be used as the key for 
- * a <code>HashMap</code>.  This class is used internally by 
- * <code>PDFGraphics2D</code> to track and re-use gradient definitions.  
- * <code>GradientPaint</code> itself does not implement the equals() and 
- * hashCode() methods, so it doesn't make a good key for a <code>Map</code>.
+ * A wrapper for a {@code GradientPaint} that can be used as the key for 
+ * a {@code HashMap}.  This class is used internally by 
+ * {@code PDFGraphics2D} to track and re-use gradient definitions.  
+ * {@code GradientPaint} itself does not implement the {@code equals()} and 
+ * {@code hashCode()} methods, so it doesn't make a good key for a {@code Map}.
  */
 public final class GradientPaintKey {
 
     private GradientPaint paint;
     
     /**
-     * Creates a new instance based on the specified <code>paint</code>.
+     * Creates a new instance based on the specified {@code paint}.
      * 
-     * @param paint  the paint (<code>null</code> not permitted). 
+     * @param paint  the paint ({@code null} not permitted). 
      */
     public GradientPaintKey(GradientPaint paint) {
         Args.nullNotPermitted(paint, "paint");
@@ -34,10 +56,10 @@ public final class GradientPaintKey {
     }
     
     /**
-     * Returns the <code>GradientPaint</code> that was supplied to the 
+     * Returns the {@code GradientPaint} that was supplied to the 
      * constructor.
      * 
-     * @return The <code>GradientPaint</code> (never <code>null</code>). 
+     * @return The {@code GradientPaint} (never {@code null}). 
      */
     public GradientPaint getPaint() {
         return this.paint;
@@ -46,7 +68,7 @@ public final class GradientPaintKey {
     /**
      * Checks this instance for equality with an arbitrary object.
      * 
-     * @param obj  the object to test against (<code>null</code> permitted).
+     * @param obj  the object to test against ({@code null} permitted).
      * 
      * @return A boolean. 
      */

@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A <code>Stream</code> is a {@link PDFObject} that has a {@link Dictionary} 
+ * A {@code Stream} is a {@link PDFObject} that has a {@link Dictionary} 
  * and a byte stream.  
  */
 public abstract class Stream extends PDFObject {
@@ -39,7 +39,7 @@ public abstract class Stream extends PDFObject {
     /**
      * Adds a filter to the stream.
      * 
-     * @param f  the filter (<code>null</code> not permitted).
+     * @param f  the filter ({@code null} not permitted).
      * 
      * @see #removeFilters() 
      */

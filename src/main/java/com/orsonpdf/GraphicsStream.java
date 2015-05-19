@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -31,11 +53,11 @@ import java.text.DecimalFormatSymbols;
 import com.orsonpdf.util.Args;
 
 /**
- * A <code>Stream</code> that contains graphics for the PDF document that
+ * A {@code Stream} that contains graphics for the PDF document that
  * can be generated via the {@link PDFGraphics2D} class.  The {@link Page}
- * class will create a <code>GraphicsStream</code> instance to represent its
- * content.  You don't normally interact directly with this class, it is 
- * intended that the <code>PDFGraphics2D</code> class drives the calls to the 
+ * class will create a {@code GraphicsStream} instance to represent its
+ * content.  You won't normally interact directly with this class, it is 
+ * intended that the {@code PDFGraphics2D} class drives the calls to the 
  * methods of this class.
  */
 public class GraphicsStream extends Stream {
@@ -71,7 +93,7 @@ public class GraphicsStream extends Stream {
      * Creates a new instance.
      * 
      * @param number  the PDF object number.
-     * @param page  the parent page (<code>null</code> not permitted).
+     * @param page  the parent page ({@code null} not permitted).
      */
     GraphicsStream(int number, Page page) {
         super(number);
@@ -111,7 +133,7 @@ public class GraphicsStream extends Stream {
     /**
      * Applies a graphics transform.
      * 
-     * @param t  the transform.
+     * @param t  the transform ({@code null} not permitted).
      */
     void applyTransform(AffineTransform t) {
         StringBuilder b = new StringBuilder();
@@ -127,7 +149,7 @@ public class GraphicsStream extends Stream {
     /**
      * Sets the transform.
      * 
-     * @param t  the transform. 
+     * @param t  the transform ({@code null} not permitted). 
      */
     void setTransform(AffineTransform t) {
         AffineTransform tt = new AffineTransform(t);
@@ -150,7 +172,7 @@ public class GraphicsStream extends Stream {
     /**
      * Applies a text transform.
      * 
-     * @param t  the transform.
+     * @param t  the transform ({@code null} not permitted). 
      */
     void applyTextTransform(AffineTransform t) {
         StringBuilder b = new StringBuilder();
@@ -166,7 +188,7 @@ public class GraphicsStream extends Stream {
     /**
      * Applies the specified clip to the current clip.
      * 
-     * @param clip  the clip (<code>null</code> not permitted). 
+     * @param clip  the clip ({@code null} not permitted). 
      */
     void applyClip(Shape clip) {
         Args.nullNotPermitted(clip, "clip");
@@ -179,7 +201,7 @@ public class GraphicsStream extends Stream {
     
     /**
      * Applies a stroke.  If the stroke is not an instance of 
-     * <code>BasicStroke</code> this method will do nothing.
+     * {@code BasicStroke} this method will do nothing.
      * 
      * @param s  the stroke. 
      */
@@ -204,7 +226,7 @@ public class GraphicsStream extends Stream {
     /**
      * Applies a color for stroking.
      * 
-     * @param c  the color. 
+     * @param c  the color ({@code null} not permitted). 
      */
     void applyStrokeColor(Color c) {
         float red = c.getRed() / 255f;
@@ -220,7 +242,7 @@ public class GraphicsStream extends Stream {
     /**
      * Applies a color for filling.
      * 
-     * @param c  the color. 
+     * @param c  the color ({@code null} not permitted).
      */
     void applyFillColor(Color c) {
         float red = c.getRed() / 255f;
@@ -234,9 +256,9 @@ public class GraphicsStream extends Stream {
     }
     
     /**
-     * Applies a <code>GradientPaint</code> for stroking.
+     * Applies a {@code GradientPaint} for stroking.
      * 
-     * @param gp  the gradient paint (<code>null</code> not permitted). 
+     * @param gp  the gradient paint ({@code null} not permitted). 
      */
     void applyStrokeGradient(GradientPaint gp) {
         // delegate arg checking
@@ -247,9 +269,9 @@ public class GraphicsStream extends Stream {
     }
     
     /**
-     * Applies a <code>RadialGradientPaint</code> for stroking.
+     * Applies a {@code RadialGradientPaint} for stroking.
      * 
-     * @param gp  the gradient paint (<code>null</code> not permitted). 
+     * @param gp  the gradient paint ({@code null} not permitted). 
      */    
     void applyStrokeGradient(RadialGradientPaint rgp) {
         // delegate arg checking
@@ -260,9 +282,9 @@ public class GraphicsStream extends Stream {
     }
 
     /**
-     * Applies a <code>GradientPaint</code> for filling.
+     * Applies a {@code GradientPaint} for filling.
      * 
-     * @param gp  the gradient paint (<code>null</code> not permitted). 
+     * @param gp  the gradient paint ({@code null} not permitted). 
      */
     void applyFillGradient(GradientPaint gp) {
         // delegate arg checking
@@ -273,9 +295,9 @@ public class GraphicsStream extends Stream {
     }
 
     /**
-     * Applies a <code>RadialGradientPaint</code> for filling.
+     * Applies a {@code RadialGradientPaint} for filling.
      * 
-     * @param gp  the gradient paint (<code>null</code> not permitted). 
+     * @param gp  the gradient paint ({@code null} not permitted). 
      */
     void applyFillGradient(RadialGradientPaint rgp) {
         // delegate arg checking
@@ -286,10 +308,11 @@ public class GraphicsStream extends Stream {
     }
 
     private float alphaFactor = 1.0f;
+
     /**
      * Applies the specified alpha composite.
      * 
-     * @param alphaComp  the alpha composite (<code>null</code> not permitted). 
+     * @param alphaComp  the alpha composite ({@code null} permitted). 
      */
     void applyComposite(AlphaComposite alphaComp) {
         if (alphaComp == null) {
@@ -310,7 +333,8 @@ public class GraphicsStream extends Stream {
     /**
      * Applies the alpha transparency.
      * 
-     * @param alpha  the new alpha value (in the range 0 to 255). 
+     * @param alpha  the new alpha value (in the range {@code 0} 
+     *     to {@code 255}). 
      */
     void applyAlpha(int alpha) {
         int a = (int) (alpha * this.alphaFactor);
@@ -342,7 +366,7 @@ public class GraphicsStream extends Stream {
     /**
      * Draws the specified line.
      * 
-     * @param line  the line. 
+     * @param line  the line ({@code null} not permitted). 
      */
     void drawLine(Line2D line) {
         StringBuilder b = new StringBuilder();
@@ -357,7 +381,7 @@ public class GraphicsStream extends Stream {
     /**
      * Draws the specified path.
      * 
-     * @param path  the path. 
+     * @param path  the path ({@code null} not permitted). 
      */
     void drawPath2D(Path2D path) {
         StringBuilder b = new StringBuilder();
@@ -368,7 +392,7 @@ public class GraphicsStream extends Stream {
     /**
      * Fills the specified path.
      * 
-     * @param path  the path. 
+     * @param path  the path ({@code null} not permitted).
      */
     void fillPath2D(Path2D path) {
         StringBuilder b = new StringBuilder();
@@ -378,7 +402,8 @@ public class GraphicsStream extends Stream {
     
     /**
      * Applies the specified font (in fact, no change is made to the stream
-     * until the next call to drawString()). 
+     * until the next call 
+     * to {@link #drawString(java.lang.String, float, float)}). 
      * 
      * @param font  the font.
      */
@@ -410,7 +435,7 @@ public class GraphicsStream extends Stream {
     }
 
     /**
-     * Draws the specified image into the rectangle <code>(x, y, w, h)</code>.
+     * Draws the specified image into the rectangle {@code (x, y, w, h)}.
      * 
      * @param img  the image.
      * @param x  the x-coordinate of the destination.
@@ -430,10 +455,10 @@ public class GraphicsStream extends Stream {
     }
 
     /**
-     * A utility method to convert a <code>Path2D</code> instance to a PDF 
+     * A utility method to convert a {@code Path2D} instance to a PDF 
      * path string.
      * 
-     * @param path  the path.
+     * @param path  the path ({@code null} not permitted).
      * 
      * @return The string. 
      */

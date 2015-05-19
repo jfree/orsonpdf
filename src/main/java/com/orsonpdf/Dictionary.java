@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
- * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -18,7 +40,7 @@ import java.util.Map;
 
 /**
  * A dictionary is a map and supports writing the bytes for the dictionary
- * in the PDF syntax.  The dictionary has an optional <code>type</code> entry 
+ * in the PDF syntax.  The dictionary has an optional {@code type} entry 
  * which is treated as a special case (to ensure it comes first in the output 
  * if it is specified).
  */
@@ -55,24 +77,24 @@ public class Dictionary {
     /**
      * Returns the dictionary type.
      * 
-     * @return The dictionary type (possibly (<code>null</code>). 
+     * @return The dictionary type (possibly ({@code null}). 
      */
     public String getType() {
         return this.type;
     }
     
     /**
-     * Sets the type.
+     * Sets the type (for example, "/Catalog").
      * 
-     * @param type  the type (<code>null</code> permitted). 
+     * @param type  the type ({@code null} permitted). 
      */
     public void setType(String type) {
         this.type = type;
     }
 
     /**
-     * Returns <code>true</code> if the dictionary has no entries, and 
-     * <code>false</code> otherwise.
+     * Returns {@code true} if the dictionary has no entries, and 
+     * {@code false} otherwise.
      * 
      * @return A boolean.
      * 
@@ -126,7 +148,7 @@ public class Dictionary {
             // but this will do for now
             baos.write(PDFUtils.toBytes(toPDFString()));
         } catch (IOException ex) {
-            throw new RuntimeException("Dictionary.toPDFBytes() failed.");
+            throw new RuntimeException("Dictionary.toPDFBytes() failed.", ex);
         }
         return baos.toByteArray();
     }
@@ -144,7 +166,7 @@ public class Dictionary {
         if (this.type != null) {
             b.append("/Type ").append(this.type).append("\n");
         }
-        // now iterate through the dictionary and write it's values
+        // now iterate through the dictionary and write its values
         for (Object key : this.map.keySet()) {
             Object value = this.map.get(key);
             if (value instanceof Number || value instanceof String) {
@@ -198,8 +220,7 @@ public class Dictionary {
                 }
                 b.append("]\n");
                 
-            } 
-            else {
+            } else {
                 throw new RuntimeException("Unrecognised value type: " + value);
             }
         }

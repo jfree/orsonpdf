@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -38,8 +60,7 @@ public final class ExponentialInterpolationFunction extends Function {
     }
         
     /**
-     * Returns the interpolation exponent.  The default value is 
-     * <code>1</code>.
+     * Returns the interpolation exponent.  The default value is {@code 1}.
      * 
      * @return The interpolation exponent.   
      */
@@ -68,9 +89,10 @@ public final class ExponentialInterpolationFunction extends Function {
     }
      
     /**
-     * Sets the function result to be used when x is 0.0.
+     * Sets the function result to be used when x is 0.0.  The array passed to 
+     * this method will be copied.
      * 
-     * @param c0  the function result.
+     * @param c0  the function result ({@code null} not permitted).
      */
     public void setC0(float[] c0) {
         this.c0 = c0.clone();
@@ -88,9 +110,10 @@ public final class ExponentialInterpolationFunction extends Function {
     }
         
     /**
-     * Sets the function result to be used when x is 1.0.
+     * Sets the function result to be used when x is 1.0.  The array passed to 
+     * this method will be copied.
      * 
-     * @param c1  the function result.
+     * @param c1  the function result ({@code null} not permitted).
      */
     public void setC1(float[] c1) {
        this.c1 = c1.clone();

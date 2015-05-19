@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -30,7 +52,7 @@ public class PDFUtils {
     /**
      * A utility method to convert a boolean[] to a PDF array string.
      * 
-     * @param b  the array (<code>null</code> not permitted).
+     * @param b  the array ({@code null} not permitted).
      * 
      * @return The string. 
      */
@@ -49,7 +71,7 @@ public class PDFUtils {
     /**
      * A utility method to convert a float[] to a PDF array string.
      * 
-     * @param f  the array (<code>null</code> not permitted).
+     * @param f  the array ({@code null} not permitted).
      * 
      * @return The string. 
      */
@@ -68,7 +90,7 @@ public class PDFUtils {
     /**
      * A utility method to convert a double[] to a PDF array string.
      * 
-     * @param d  the array (<code>null</code> not permitted).
+     * @param d  the array ({@code null} not permitted).
      * 
      * @return The string. 
      */
@@ -87,7 +109,7 @@ public class PDFUtils {
     /**
      * Returns a Java2D AffineTransform in PDF matrix format.
      * 
-     * @param t  the transform (<code>null</code> not permitted).
+     * @param t  the transform ({@code null} not permitted).
      * 
      * @return A PDF matrix string.
      */
@@ -107,7 +129,7 @@ public class PDFUtils {
      * Returns a string in standard PDF date format representing the specified 
      * date (in the default timezone).
      * 
-     * @param date  the date (<code>null</code> not permitted).
+     * @param date  the date ({@code null} not permitted).
      * 
      * @return A string in standard PDF date format. 
      */
@@ -121,7 +143,7 @@ public class PDFUtils {
      * Returns a string in standard PDF date format representing the date 
      * contained by the specified calendar.
      * 
-     * @param calendar  the date and timezone (<code>null</code> not permitted).
+     * @param calendar  the date and timezone ({@code null} not permitted).
      * 
      * @return A string in standard PDF date format. 
      */

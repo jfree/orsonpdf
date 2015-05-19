@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -74,8 +96,8 @@ public enum TextAnchor {
     }
 
     /**
-     * Returns <code>true</code> if this anchor is at the left side of the
-     * text bounds, and <code>false</code> otherwise.
+     * Returns {@code true} if this anchor is at the left side of the
+     * text bounds, and {@code false} otherwise.
      * 
      * @return A boolean. 
      */
@@ -86,8 +108,8 @@ public enum TextAnchor {
     }
     
     /**
-     * Returns <code>true</code> if this anchor is horizontally at the center 
-     * of the text bounds, and <code>false</code> otherwise.
+     * Returns {@code true} if this anchor is horizontally at the center 
+     * of the text bounds, and {@code false} otherwise.
      * 
      * @return A boolean. 
      */
@@ -98,8 +120,8 @@ public enum TextAnchor {
     }
     
     /**
-     * Returns <code>true</code> if this anchor is at the right side of the
-     * text bounds, and <code>false</code> otherwise.
+     * Returns {@code true} if this anchor is at the right side of the
+     * text bounds, and {@code false} otherwise.
      * 
      * @return A boolean. 
      */
@@ -110,8 +132,8 @@ public enum TextAnchor {
     }
     
     /**
-     * Returns <code>true</code> if this anchor is at the top of the
-     * text bounds, and <code>false</code> otherwise.
+     * Returns {@code true} if this anchor is at the top of the
+     * text bounds, and {@code false} otherwise.
      * 
      * @return A boolean. 
      */
@@ -120,8 +142,8 @@ public enum TextAnchor {
     }
     
     /**
-     * Returns <code>true</code> if this anchor is at the half-ascent level of 
-     * the text bounds, and <code>false</code> otherwise.
+     * Returns {@code true} if this anchor is at the half-ascent level of 
+     * the text bounds, and {@code false} otherwise.
      * 
      * @return A boolean. 
      */
@@ -131,8 +153,8 @@ public enum TextAnchor {
     }
     
     /**
-     * Returns <code>true</code> if this anchor is at the half-height level of 
-     * the text bounds, and <code>false</code> otherwise.
+     * Returns {@code true} if this anchor is at the half-height level of 
+     * the text bounds, and {@code false} otherwise.
      * 
      * @return A boolean. 
      */
@@ -141,8 +163,8 @@ public enum TextAnchor {
     }
     
     /**
-     * Returns <code>true</code> if this anchor is at the baseline level of 
-     * the text bounds, and <code>false</code> otherwise.
+     * Returns {@code true} if this anchor is at the baseline level of 
+     * the text bounds, and {@code false} otherwise.
      * 
      * @return A boolean. 
      */
@@ -152,8 +174,8 @@ public enum TextAnchor {
     }
     
     /**
-     * Returns <code>true</code> if this anchor is at the bottom of 
-     * the text bounds, and <code>false</code> otherwise.
+     * Returns {@code true} if this anchor is at the bottom of 
+     * the text bounds, and {@code false} otherwise.
      * 
      * @return A boolean. 
      */

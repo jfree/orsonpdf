@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -30,7 +52,7 @@ public class TextUtils {
     
     /**
      * Draws a string such that the specified anchor point is aligned to the
-     * given (x, y) location.
+     * given {@code (x, y)} location.
      *
      * @param text  the text.
      * @param g2  the graphics device.
@@ -55,12 +77,12 @@ public class TextUtils {
 
     /**
      * A utility method that calculates the anchor offsets for a string.
-     * Normally, the (x, y) coordinate for drawing text is a point on the
-     * baseline at the left of the text string.  If you add these offsets to
-     * (x, y) and draw the string, then the anchor point should coincide with
-     * the (x, y) point.
+     * Normally, the {@code (x, y)} coordinate for drawing text is a point on 
+     * the baseline at the left of the text string.  If you add these offsets to
+     * {@code (x, y)} and draw the string, then the anchor point should 
+     * coincide with the {@code (x, y)} point.
      *
-     * @param g2  the graphics device (not <code>null</code>).
+     * @param g2  the graphics device (not {@code null}).
      * @param text  the text.
      * @param anchor  the anchor point.
      *
@@ -84,24 +106,19 @@ public class TextUtils {
 
         if (anchor.isHorizontalCenter()) {
             xAdj = (float) -bounds.getWidth() / 2.0f;
-        }
-        else if (anchor.isRight()) {
+        } else if (anchor.isRight()) {
             xAdj = (float) -bounds.getWidth();
         }
 
         if (anchor.isTop()) {
             yAdj = -descent - leading + (float) bounds.getHeight();
-        }
-        else if (anchor.isHalfAscent()) {
+        } else if (anchor.isHalfAscent()) {
             yAdj = halfAscent;
-        }
-        else if (anchor.isHalfHeight()) {
+        } else if (anchor.isHalfHeight()) {
             yAdj = -descent - leading + (float) (bounds.getHeight() / 2.0);
-        }
-        else if (anchor.isBaseline()) {
+        } else if (anchor.isBaseline()) {
             yAdj = 0.0f;
-        }
-        else if (anchor.isBottom()) {
+        } else if (anchor.isBottom()) {
             yAdj = -metrics.getDescent() - metrics.getLeading();
         }
         result[0] = xAdj;
@@ -111,15 +128,15 @@ public class TextUtils {
 
     /**
      * A utility method that calculates the anchor offsets for a string.
-     * Normally, the (x, y) coordinate for drawing text is a point on the
-     * baseline at the left of the text string.  If you add these offsets to
-     * (x, y) and draw the string, then the anchor point should coincide with
-     * the (x, y) point.
+     * Normally, the {@code (x, y)} coordinate for drawing text is a point on 
+     * the baseline at the left of the text string.  If you add these offsets to
+     * {@code (x, y)} and draw the string, then the anchor point should 
+     * coincide with the {@code (x, y)} point.
      *
-     * @param g2  the graphics device (not <code>null</code>).
+     * @param g2  the graphics device (not {@code null}).
      * @param text  the text.
      * @param anchor  the anchor point.
-     * @param textBounds  the text bounds (if not <code>null</code>, this
+     * @param textBounds  the text bounds (if not {@code null}, this
      *                    object will be updated by this method to match the
      *                    string bounds).
      *
@@ -144,24 +161,19 @@ public class TextUtils {
 
         if (anchor.isHorizontalCenter()) {
             xAdj = (float) -bounds.getWidth() / 2.0f;
-        }
-        else if (anchor.isRight()) {
+        } else if (anchor.isRight()) {
             xAdj = (float) -bounds.getWidth();
         }
 
         if (anchor.isTop()) {
             yAdj = -descent - leading + (float) bounds.getHeight();
-        }
-        else if (anchor.isHalfAscent()) {
+        } else if (anchor.isHalfAscent()) {
             yAdj = halfAscent;
-        }
-        else if (anchor.isHalfHeight()) {
+        } else if (anchor.isHalfHeight()) {
             yAdj = -descent - leading + (float) (bounds.getHeight() / 2.0);
-        }
-        else if (anchor.isBaseline()) {
+        } else if (anchor.isBaseline()) {
             yAdj = 0.0f;
-        }
-        else if (anchor.isBottom()) {
+        } else if (anchor.isBottom()) {
             yAdj = -metrics.getDescent() - metrics.getLeading();
         }
         if (textBounds != null) {
@@ -175,20 +187,20 @@ public class TextUtils {
     /**
      * Returns the bounds for the specified text.
      *
-     * @param text  the text (<code>null</code> permitted).
-     * @param g2  the graphics context (not <code>null</code>).
-     * @param fm  the font metrics (not <code>null</code>).
+     * @param text  the text ({@code null} permitted).
+     * @param g2  the graphics context (not {@code null}).
+     * @param fm  the font metrics (not {@code null}).
      *
-     * @return The text bounds (<code>null</code> if the <code>text</code>
-     *         argument is <code>null</code>).
+     * @return The text bounds ({@code null} if the {@code text}
+     *         argument is {@code null}).
      */
     public static Rectangle2D getTextBounds(String text, Graphics2D g2, 
             FontMetrics fm) {
-        Rectangle2D bounds;
         double width = fm.stringWidth(text);
         double height = fm.getHeight();
         return new Rectangle2D.Double(0.0, -fm.getAscent(), width, height);
     }
+
     /**
      * Draws a string that is aligned by one anchor point and rotated about
      * another anchor point.
@@ -244,7 +256,7 @@ public class TextUtils {
     /**
      * A utility method that calculates the rotation anchor offsets for a
      * string.  These offsets are relative to the text starting coordinate
-     * (BASELINE_LEFT).
+     * ({@code BASELINE_LEFT}).
      *
      * @param g2  the graphics device.
      * @param text  the text.
@@ -269,27 +281,21 @@ public class TextUtils {
 
         if (anchor.isLeft()) {
             xAdj = 0.0f;
-        }
-        else if (anchor.isHorizontalCenter()) {
+        } else if (anchor.isHorizontalCenter()) {
             xAdj = (float) bounds.getWidth() / 2.0f;
-        }
-        else if (anchor.isRight()) {
+        } else if (anchor.isRight()) {
             xAdj = (float) bounds.getWidth();
         }
 
         if (anchor.isTop()) {
             yAdj = descent + leading - (float) bounds.getHeight();
-        }
-        else if (anchor.isHalfHeight()) {
+        } else if (anchor.isHalfHeight()) {
             yAdj = descent + leading - (float) (bounds.getHeight() / 2.0);
-        }
-        else if (anchor.isHalfAscent()) {
+        } else if (anchor.isHalfAscent()) {
             yAdj = -halfAscent;
-        }
-        else if (anchor.isBaseline()) {
+        } else if (anchor.isBaseline()) {
             yAdj = 0.0f;
-        }
-        else if (anchor.isBottom()) {
+        } else if (anchor.isBottom()) {
             yAdj = metrics.getDescent() + metrics.getLeading();
         }
         result[0] = xAdj;
@@ -300,8 +306,8 @@ public class TextUtils {
     /**
      * A utility method for drawing rotated text.
      * <P>
-     * A common rotation is -Math.PI/2 which draws text 'vertically' (with the
-     * top of the characters on the left).
+     * A common rotation is {@code -Math.PI/2} which draws text 'vertically' 
+     * (with the top of the characters on the left).
      *
      * @param text  the text.
      * @param g2  the graphics device.
@@ -317,8 +323,8 @@ public class TextUtils {
     /**
      * A utility method for drawing rotated text.
      * <P>
-     * A common rotation is -Math.PI/2 which draws text 'vertically' (with the
-     * top of the characters on the left).
+     * A common rotation is {@code -Math.PI/2} which draws text 'vertically' 
+     * (with the top of the characters on the left).
      *
      * @param text  the text.
      * @param g2  the graphics device.

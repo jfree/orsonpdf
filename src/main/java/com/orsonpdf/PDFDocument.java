@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -45,10 +67,7 @@ public class PDFDocument {
             PDFDocument.class.getName());
 
     /** Producer string. */
-    private static final String PRODUCER = "OrsonPDF 1.6";
-    
-    /** Flag for evaluation version. */
-    private static final boolean EVAL_VERSION = false;
+    private static final String PRODUCER = "OrsonPDF 1.7";
     
     /** The document catalog. */
     private DictionaryObject catalog;
@@ -75,14 +94,6 @@ public class PDFDocument {
     private int nextNumber = 1;
 
     /** 
-     * The graphics stream containing the watermark for evaluation versions of
-     * the software.  If present, this watermark will be created by the first
-     * page in the document, and passed up to the document for tracking (it
-     * will be added to the otherObjects list for output in the PDF bytes).
-     */
-    private GraphicsStream evaluationGraphicsStream;
-
-    /** 
      * A flag that is used to indicate that we are in DEBUG mode.  In this 
      * mode, the graphics stream for a page does not have a filter applied, so
      * the output can be read in a text editor.
@@ -90,16 +101,13 @@ public class PDFDocument {
     private boolean debug;
 
     /**
-     * Creates a new <code>PDFDocument</code>, initially with no content.
+     * Creates a new {@code PDFDocument}, initially with no content.
      */
     public PDFDocument() {
         this.catalog = new DictionaryObject(this.nextNumber++, "/Catalog");
         this.outlines = new DictionaryObject(this.nextNumber++, "/Outlines");
         this.info = new DictionaryObject(this.nextNumber++, "/Info");
         StringBuilder producer = new StringBuilder("(").append(PRODUCER);
-        if (EVAL_VERSION) {
-            producer.append(" Evaluation Version");
-        }
         producer.append(")");
         this.info.put("Producer", producer.toString());
         Date now = new Date();
@@ -114,44 +122,9 @@ public class PDFDocument {
     }
     
     /**
-     * Returns a flag indicating whether or not this is an evaluation version
-     * of the software.  If yes, the output will include a watermark 
-     * indicating the status.
+     * Returns the title for the document.  The default value is {@code null}.
      * 
-     * @return A boolean. 
-     */
-    final boolean isEvaluationVersion() {
-        return EVAL_VERSION;    
-    }
-    
-    /**
-     * Returns the watermark displayed if this is an evaluation copy of the
-     * software.
-     * 
-     * @return The watermark (possibly <code>null</code>). 
-     */
-    final GraphicsStream getEvaluationWatermark() {
-        return this.evaluationGraphicsStream;
-    }
-    
-    /**
-     * Sets the watermark that will be displayed on every page if this is an
-     * evaluation copy of the software.
-     * 
-     * @param gs  the watermark. 
-     */
-    final void setEvaluationWatermark(GraphicsStream gs) {
-        if (gs != null) {
-            this.otherObjects.add(gs);
-        }
-        this.evaluationGraphicsStream = gs;
-    }
-    
-    /**
-     * Returns the title for the document.  The default value is 
-     * <code>null</code>.
-     * 
-     * @return The title for the document (possibly <code>null</code>).
+     * @return The title for the document (possibly {@code null}).
      */
     public String getTitle() {
         return this.title;
@@ -160,7 +133,7 @@ public class PDFDocument {
     /**
      * Sets the title for the document.
      * 
-     * @param title  the title (<code>null</code> permitted).
+     * @param title  the title ({@code null} permitted).
      */
     public void setTitle(String title) {
         this.title = title;
@@ -172,10 +145,9 @@ public class PDFDocument {
     }
 
     /**
-     * Returns the author for the document.  The default value is 
-     * <code>null</code>.
+     * Returns the author for the document.  The default value is {@code null}.
      * 
-     * @return The author for the document (possibly <code>null</code>).
+     * @return The author for the document (possibly {@code null}).
      */
     public String getAuthor() {
         return this.author;
@@ -184,7 +156,7 @@ public class PDFDocument {
     /**
      * Sets the author for the document.
      * 
-     * @param author  the author (<code>null</code> permitted). 
+     * @param author  the author ({@code null} permitted). 
      */
     public void setAuthor(String author) {
         this.author = author;
@@ -220,10 +192,10 @@ public class PDFDocument {
     }
 
     /**
-     * Creates a new <code>Page</code>, adds it to the document, and returns
-     * a reference to the <code>Page</code>.
+     * Creates a new {@code Page}, adds it to the document, and returns
+     * a reference to the {@code Page}.
      * 
-     * @param bounds  the page bounds (<code>null</code> not permitted).
+     * @param bounds  the page bounds ({@code null} not permitted).
      * 
      * @return The new page. 
      */
@@ -237,7 +209,7 @@ public class PDFDocument {
     /**
      * Adds an object to the document.
      * 
-     * @param object  the object (<code>null</code> not permitted). 
+     * @param object  the object ({@code null} not permitted). 
      */
     public void addObject(PDFObject object) {
         Args.nullNotPermitted(object, "object");

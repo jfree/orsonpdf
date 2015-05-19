@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -14,7 +14,7 @@ import java.awt.RenderingHints;
 
 /**
  * Defines the rendering hints that can be used with the {@link PDFGraphics2D} 
- * class.  There is just one hint defined for the moment:<br>
+ * class.  There is just one hint defined at present:<br>
  * <ul>
  * <li>{@link #KEY_DRAW_STRING_TYPE} that controls how the drawString() methods
  * generate output (regular text or vector graphics);</li>
@@ -63,8 +63,8 @@ public final class PDFHints {
         }
     
         /**
-         * Returns <code>true</code> if <code>val</code> is a value that is
-         * compatible with this key, and <code>false</code> otherwise.
+         * Returns {@code true} if {@code val} is a value that is
+         * compatible with this key, and {@code false} otherwise.
          * 
          * @param val  the value.
          * 

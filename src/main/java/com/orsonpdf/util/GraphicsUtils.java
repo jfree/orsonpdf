@@ -2,9 +2,31 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013, 2014, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * [Oracle and Java are registered trademarks of Oracle and/or its affiliates. 
+ * Other names may be trademarks of their respective owners.]
+ * 
+ * If you do not wish to be bound by the terms of the GPL, an alternative
+ * commercial license can be purchased.  For details, please see visit the
+ * Orson Charts home page:
+ * 
+ * http://www.object-refinery.com/orsonpdf/index.html
  * 
  */
 
@@ -37,7 +59,7 @@ public class GraphicsUtils {
     /**
      * Returns a shape that is more or less equivalent to the supplied shape.
      * 
-     * @param shape  the shape (<code>null</code> not permitted).
+     * @param shape  the shape ({@code null} not permitted).
      * 
      * @return A copy of the shape (it may not be the same class). 
      */
@@ -77,8 +99,8 @@ public class GraphicsUtils {
     }
 
     /**
-     * Creates a polygon for from the specified <code>x</code> and 
-     * <code>y</code> coordinates.
+     * Creates a polygon for from the specified {@code x} and 
+     * {@code y} coordinates.
      * 
      * @param xPoints  the x-points.
      * @param yPoints  the y-points.
@@ -101,7 +123,7 @@ public class GraphicsUtils {
     }
 
     /**
-     * Converts a rendered image to a <code>BufferedImage</code>.  This utility
+     * Converts a rendered image to a {@code BufferedImage}.  This utility
      * method has come from a forum post by Jim Moore at:
      * <p>
      * <a href="http://www.jguru.com/faq/view.jsp?EID=114602">

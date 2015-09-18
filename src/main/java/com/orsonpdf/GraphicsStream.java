@@ -24,7 +24,7 @@
  * 
  * If you do not wish to be bound by the terms of the GPL, an alternative
  * commercial license can be purchased.  For details, please see visit the
- * Orson Charts home page:
+ * Orson PDF home page:
  * 
  * http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -154,16 +154,16 @@ public class GraphicsStream extends Stream {
     void setTransform(AffineTransform t) {
         AffineTransform tt = new AffineTransform(t);
         try {
-          AffineTransform inv = tt.createInverse();
-          AffineTransform comb;
-          if (this.prevTransInv != null) {
-            comb = new AffineTransform(this.prevTransInv);
-            comb.concatenate(tt);
-          } else {
-            comb = tt;
-          }
-          this.prevTransInv = inv;
-          applyTransform(comb);
+            AffineTransform inv = tt.createInverse();
+            AffineTransform comb;
+            if (this.prevTransInv != null) {
+                comb = new AffineTransform(this.prevTransInv);
+                comb.concatenate(tt);
+            } else {
+                comb = tt;
+            }
+            this.prevTransInv = inv;
+            applyTransform(comb);
         } catch (NoninvertibleTransformException e) {
           // do nothing
         }

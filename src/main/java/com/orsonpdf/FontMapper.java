@@ -24,7 +24,7 @@
  * 
  * If you do not wish to be bound by the terms of the GPL, an alternative
  * commercial license can be purchased.  For details, please see visit the
- * Orson Charts home page:
+ * Orson PDF home page:
  * 
  * http://www.object-refinery.com/orsonpdf/index.html
  * 

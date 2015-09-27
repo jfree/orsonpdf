@@ -1,7 +1,7 @@
 OrsonPDF
 ========
 
-Version 1.7, 19 May 2015
+Version 1.7, 27 September 2015
 
 (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
 
@@ -40,9 +40,10 @@ Other code distributed with OrsonPDF:
 Change History
 --------------
 
-Version 1.7 (19 May 2015)
+Version 1.7 (27 September 2015)
 
 - implemented PDFGraphics2D.create() method;
+- added support for image transparency;
 - fixed broken PDFGraphics2D.drawImage() method;
 - added GPLv3 or later as a license option.
 

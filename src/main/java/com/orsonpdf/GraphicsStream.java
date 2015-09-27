@@ -444,7 +444,7 @@ public class GraphicsStream extends Stream {
      * @param h  the height of the destination.
      */
     void drawImage(Image img, int x, int y, int w, int h) {
-        String imageRef = this.page.addImage(img);
+        String imageRef = this.page.addImage(img, true);
         StringBuilder b = new StringBuilder();
         b.append("q\n");
         b.append(geomDP(w)).append(" 0 0 ").append(geomDP(h)).append(" ");

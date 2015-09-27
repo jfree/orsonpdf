@@ -38,9 +38,9 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 
 /**
- * Represents an image in a PDF document.
+ * Represents a soft mask image in a PDF document.
  */
-public class PDFImage extends Stream {
+public class PDFSoftMaskImage extends Stream {
 
     /** The width. */
     int width;
@@ -51,23 +51,18 @@ public class PDFImage extends Stream {
     /** The image. */
     Image image;
     
-    String softMaskImageRef;
-    
     /**
-     * Creates a new image object.
+     * Creates a new soft mask image object.
      * 
      * @param number  the PDF object number.
      * @param img  the AWT image object ({@code null} not permitted).
-     * @param softMaskImageRef  the soft mask image reference ({@code null} 
-     *     permitted).
      */
-    public PDFImage(int number, Image img, String softMaskImageRef) {
+    public PDFSoftMaskImage(int number, Image img) {
         super(number);
         Args.nullNotPermitted(img, "img");
         this.width = img.getWidth(null);
         this.height = img.getHeight(null);
         this.image = img;
-        this.softMaskImageRef = softMaskImageRef;
     }
 
     /**
@@ -89,14 +84,12 @@ public class PDFImage extends Stream {
             bi = (BufferedImage) this.image;
         }
         // create a byte array of the image data to go in the PDF
-        byte[] result = new byte[this.width * this.height * 3];
+        byte[] result = new byte[this.width * this.height];
         int i = 0;
         for (int hh = this.height - 1; hh >= 0; hh--) {
             for (int ww = 0; ww < this.width; ww++) {
                 int rgb = bi.getRGB(ww, hh);
-                result[i++] = (byte) (rgb >> 16);
-                result[i++] = (byte) (rgb >> 8);
-                result[i++] = (byte) rgb;
+                result[i++] = (byte) (rgb >> 24);
             }
         }
         return result;
@@ -115,13 +108,10 @@ public class PDFImage extends Stream {
         Dictionary dictionary = super.createDictionary(streamLength);
         dictionary.setType("/XObject");
         dictionary.put("/Subtype", "/Image");
-        dictionary.put("/ColorSpace", "/DeviceRGB");
+        dictionary.put("/ColorSpace", "/DeviceGray");
         dictionary.put("/BitsPerComponent", 8);
         dictionary.put("/Width", this.width);
         dictionary.put("/Height", this.height);
-        if (this.softMaskImageRef != null) {
-            dictionary.put("/SMask", this.softMaskImageRef);
-        }
         return dictionary;
     }
 }

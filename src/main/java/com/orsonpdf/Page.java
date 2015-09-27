@@ -339,6 +339,24 @@ public class Page extends PDFObject {
         }
         return name;
     }
+
+    /**
+     * Adds a soft mask image to the page.  This is called from the 
+     * {@link #addImage(java.awt.Image)} method to support image transparency.
+     * 
+     * @param img  the image ({@code null} not permitted).
+     * 
+     * @return The soft mask image reference.
+     */
+    String addSoftMaskImage(Image img) {
+        Args.nullNotPermitted(img, "img");
+        PDFDocument pdfDoc = this.parent.getDocument();
+        PDFSoftMaskImage softMaskImage = new PDFSoftMaskImage(
+                pdfDoc.getNextNumber(), img);
+        softMaskImage.addFilter(new FlateFilter());
+        pdfDoc.addObject(softMaskImage);
+        return softMaskImage.getReference();
+    }
     
     /**
      * Adds an image to the page.  This creates the required PDF object, 
@@ -351,10 +369,15 @@ public class Page extends PDFObject {
      * 
      * @return The image reference name.
      */
-    String addImage(Image img) {
+    String addImage(Image img, boolean addSoftMaskImage) {
         Args.nullNotPermitted(img, "img");
         PDFDocument pdfDoc = this.parent.getDocument();
-        PDFImage image = new PDFImage(pdfDoc.getNextNumber(), img);
+        String softMaskImageRef = null;
+        if (addSoftMaskImage) {
+            softMaskImageRef = addSoftMaskImage(img);
+        }
+        PDFImage image = new PDFImage(pdfDoc.getNextNumber(), img, 
+                softMaskImageRef);
         image.addFilter(new FlateFilter());
         pdfDoc.addObject(image);
         String reference = "/Image" + this.xObjects.size();

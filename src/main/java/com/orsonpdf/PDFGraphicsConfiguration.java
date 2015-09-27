@@ -24,7 +24,7 @@
  * 
  * If you do not wish to be bound by the terms of the GPL, an alternative
  * commercial license can be purchased.  For details, please see visit the
- * Orson Charts home page:
+ * Orson PDF home page:
  * 
  * http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -32,13 +32,17 @@
 
 package com.orsonpdf;
 
+import java.awt.AWTException;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
+import java.awt.ImageCapabilities;
 import java.awt.Rectangle;
 import java.awt.Transparency;
 import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.DirectColorModel;
+import java.awt.image.VolatileImage;
 
 /**
  * A graphics configuration for the {@link PDFGraphics2D} class.
@@ -133,5 +137,16 @@ public class PDFGraphicsConfiguration extends GraphicsConfiguration {
     public Rectangle getBounds() {
         return new Rectangle(this.width, this.height);
     }
+        
+    private BufferedImage img = new BufferedImage(10, 10, 
+            BufferedImage.TYPE_INT_ARGB);
     
+    @Override
+    public VolatileImage createCompatibleVolatileImage(int width, int height, 
+            ImageCapabilities caps, int transparency) throws AWTException {
+        return img.createGraphics().getDeviceConfiguration()
+                .createCompatibleVolatileImage(width, height, caps, 
+                        transparency);
+    }
+
 }

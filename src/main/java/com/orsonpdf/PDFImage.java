@@ -81,16 +81,16 @@ public class PDFImage extends Stream {
     @Override
     public byte[] getRawStreamData() {
         BufferedImage bi;
-        if (!(this.image instanceof BufferedImage)) {
+        //if (!(this.image instanceof BufferedImage)) {
             bi = new BufferedImage(this.width, this.height, 
                     BufferedImage.TYPE_INT_ARGB);
             Graphics2D g2 = bi.createGraphics();
             g2.setBackground(new Color(255, 255, 255, 0));
             g2.clearRect(0, 0, this.width, this.height);
             g2.drawImage(this.image, 0, 0, null);
-        } else {
-            bi = (BufferedImage) this.image;
-        }
+        //} else {
+        //    bi = (BufferedImage) this.image;
+        //}
         // create a byte array of the image data to go in the PDF
         byte[] result = new byte[this.width * this.height * 3];
         int i = 0;

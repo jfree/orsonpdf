@@ -85,7 +85,7 @@ public class PDFImage extends Stream {
             bi = new BufferedImage(this.width, this.height, 
                     BufferedImage.TYPE_INT_RGB);
             Graphics2D g2 = bi.createGraphics();
-            g2.setBackground(Color.WHITE);
+            g2.setBackground(new Color(255, 255, 255, 0));
             g2.clearRect(0, 0, this.width, this.height);
             g2.drawImage(this.image, 0, 0, null);
         } else {

@@ -355,6 +355,8 @@ public class Page extends PDFObject {
                 pdfDoc.getNextNumber(), img);
         softMaskImage.addFilter(new FlateFilter());
         pdfDoc.addObject(softMaskImage);
+        String reference = "/Image" + this.xObjects.size();
+        this.xObjects.put(reference, softMaskImage);
         return softMaskImage.getReference();
     }
     

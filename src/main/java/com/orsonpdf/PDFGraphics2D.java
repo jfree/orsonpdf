@@ -146,6 +146,14 @@ public final class PDFGraphics2D extends Graphics2D {
     
     private GraphicsConfiguration deviceConfiguration;
 
+    /** 
+     * The font render context.  The fractional metrics flag solves the glyph
+     * positioning issue identified by Christoph Nahr:
+     * http://news.kynosarges.org/2014/06/28/glyph-positioning-in-jfreesvg-orsonpdf/
+     */
+    private final FontRenderContext fontRenderContext = new FontRenderContext(
+            null, false, true);
+
     /**
      * Creates a new instance of {@code PDFGraphics2D}.  You won't 
      * normally create this directly, instead you will call the 
@@ -573,7 +581,7 @@ public final class PDFGraphics2D extends Graphics2D {
      */
     @Override
     public FontRenderContext getFontRenderContext() {
-        return this.image.createGraphics().getFontRenderContext();
+        return this.fontRenderContext;
     }
 
     /**

@@ -102,7 +102,6 @@ public class SwingUIToPDFDemo extends JFrame implements ActionListener {
         SwingUIToPDFDemo app = new SwingUIToPDFDemo("SwingUIToPDFDemo.java");
         app.pack();
         app.setVisible(true);
-        
     }
 
 }

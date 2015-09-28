@@ -77,7 +77,7 @@ public class PDFSoftMaskImage extends Stream {
         BufferedImage bi;
         if (!(this.image instanceof BufferedImage)) {
             bi = new BufferedImage(this.width, this.height, 
-                    BufferedImage.TYPE_INT_RGB);
+                    BufferedImage.TYPE_INT_ARGB);
             Graphics2D g2 = bi.createGraphics();
             g2.drawImage(this.image, 0, 0, null);
         } else {

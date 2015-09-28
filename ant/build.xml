@@ -146,7 +146,7 @@
     <target name="zip" depends="fill-distribution">
 
         <!-- make the zip file -->
-        <zip zipfile="${basedir}/${orsonpdf.name}-${orsonpdf.version}-src.zip">
+        <zip zipfile="${basedir}/${orsonpdf.name}-${orsonpdf.version}.zip">
              <zipfileset dir="${basedir}/distribution"
                          prefix="${orsonpdf.name}-${orsonpdf.version}" />
         </zip>

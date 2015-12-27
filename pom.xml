@@ -50,10 +50,8 @@
           <compilerArgument>-Xlint:unchecked</compilerArgument>
           <encoding>${project.build.sourceEncoding}</encoding>
           <excludes>
-            <exclude>com/orsonpdf/demo/PDFBarChartDemo1.java</exclude>
-            <exclude>com/orsonpdf/demo/PDFPieChartDemo1.java</exclude>
-            <exclude>com/orsonpdf/demo/PDFTimeSeriesChartDemo1.java</exclude>
-          </excludes>                
+            <exclude>com/orsonpdf/demo/**</exclude>
+          </excludes>
         </configuration>
       </plugin>
 

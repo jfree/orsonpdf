@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2016, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -57,7 +57,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Some tests for a Graphics2D implementation.
+ * Some tests for a Graphics2D implementation.  All tests should pass with the
+ * Graphics2D instance from a BufferedImage (which we can treat as a reference
+ * implementation).
  */
 public class TestGraphics2D {
     
@@ -283,8 +285,8 @@ public class TestGraphics2D {
     }
     
     /**
-     * Checks that getClipBounds() returns <code>null</code> when the clip is
-     * <code>null</code>.
+     * Checks that getClipBounds() returns {@code null} when the clip is
+     * {@code null}.
      */
     @Test
     public void checkGetClipBoundsWhenClipIsNull() {
@@ -727,5 +729,16 @@ public class TestGraphics2D {
     public void drawImageWithNullBackground() {
         Image img = new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
         g2.drawImage(img, 10, 10, null, null);
+        assertTrue(true); // won't get here if there's an exception above
+    }
+    
+    /**
+     * https://github.com/jfree/jfreesvg/issues/6
+     */
+    @Test
+    public void drawImageWithNullTransform() {
+        Image img = new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
+        g2.drawImage(img, null, null);
+        assertTrue(true); // won't get here if there's an exception above
     }
 }

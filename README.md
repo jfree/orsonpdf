@@ -40,58 +40,62 @@ Other code distributed with OrsonPDF:
 Change History
 --------------
 
+Version 1.8 (not yet released)
+
+- fix for exception in `drawImage()` with null transform;
+
 Version 1.7 (28 September 2015)
 
-- implemented PDFGraphics2D.create() method;
+- implemented `PDFGraphics2D.create()` method;
 - added support for image transparency;
-- fixed broken PDFGraphics2D.drawImage() method;
+- fixed broken `PDFGraphics2D.drawImage()` method;
 - added GPLv3 or later as a license option.
 
 
 Version 1.6 (31 March 2014)
 
-- added support for shape outlining with arbitrary Stroke implementations (previously only BasicStroke was recognised);
+- added support for shape outlining with arbitrary `Stroke` implementations (previously only `BasicStroke` was recognised);
 - minor Javadoc updates.
 
 
 Version 1.5 (5 March 2014)
 
-- added rendering hint DRAW_STRING_TYPE which provides an option to render text as vector graphics, which allows the inclusion of Unicode characters in the output without font embedding;
+- added rendering hint `DRAW_STRING_TYPE` which provides an option to render text as vector graphics, which allows the inclusion of Unicode characters in the output without font embedding;
 - improve support for alpha transparency;
 - minor additions to default font mapping.
 
 
 Version 1.4 (18 December 2013)
 
-- fixed invalid XREF table which caused Acrobat Reader to prompt for saving when closing PDFs;
+- fixed invalid `XREF` table which caused Acrobat Reader to prompt for saving when closing PDFs;
 - added debug mode to generate PDF file without filtering;
 - fixed a bug in the graphics stream generation that resulted in malformed PDF output in some locales.
 
 
 Version 1.3 (8 November 2013)
 
-- implemented getDeviceConfiguration();
+- implemented `getDeviceConfiguration()`;
 - fixed transform bug that could result in malformed PDF output;
-- fixed a bug in the getClipBounds() method when the clip is null;
-- corrected the Producer version info;
+- fixed a bug in the `getClipBounds()` method when the clip is null;
+- corrected the `Producer` version info;
 - fixed a bug with the date formatter for the document creation date.
 
 
 Version 1.2 (12 September 2013)
 
-- fixed bug in RadialGradientPaint support.
+- fixed bug in `RadialGradientPaint` support.
 
 
 Version 1.1 (3 September 2013)
 
-- reimplemented drawString(AttributedCharacterIterator, float, float) using TextLayout and modified drawGlyphVector() to fill rather than stroke shapes;
-- added degree elevation to the quadratic segments of Path2D objects to ensure correct output quality;
-- fixed Page so it does not add /XObject to resources if there are no xObjects;
-- fixed bug affecting switch between GradientPaint and Color;
+- reimplemented `drawString(AttributedCharacterIterator, float, float)` using `TextLayout` and modified `drawGlyphVector()` to fill rather than stroke shapes;
+- added degree elevation to the quadratic segments of `Path2D` objects to ensure correct output quality;
+- fixed `Page` so it does not add `/XObject` to resources if there are no `xObjects`;
+- fixed bug affecting switch between `GradientPaint` and `Color`;
 - fixed clipping bug;
-- moved PDF classes into OrsonPDF project (changing the root package to com.orsonpdf.*);
+- moved PDF classes into OrsonPDF project (changing the root package to `com.orsonpdf.*`);
 
 
 Version 1.0 (31 July 2013)
 
-- Initial public release (JFreeGraphics2D).
+- Initial public release (`JFreeGraphics2D`).

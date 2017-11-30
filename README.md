@@ -1,10 +1,11 @@
 OrsonPDF
 ========
 
-Version 1.7, 28 September 2015
+Version 1.8-SNAPSHOT, by David Gilbert, not yet released.
 
-(C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
+(C)opyright 2013-2017, by Object Refinery Limited.  All rights reserved.
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.orsonpdf/orsonpdf/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.orsonpdf/orsonpdf)
 
 Overview
 --------
@@ -12,7 +13,7 @@ OrsonPDF is a PDF generation library for the Java(tm) platform that allows you t
 
     http://www.object-refinery.com/orsonpdf/
 
-Version 1.0 was release on 31 July 2013 and the most recent version (1.7) was released on 28 September 2015.  Changes since the initial release are listed towards the end of this file.
+Version 1.0 was released on 31 July 2013 and the most recent version (1.7) was released on 28 September 2015.  Changes since the initial release are listed towards the end of this file.
 
 
 Getting Started
@@ -23,7 +24,7 @@ Oracle provides tutorials for Java2D here:
 
     http://docs.oracle.com/javase/tutorial/2d/
 
-There are some demonstration applications included in the com.orsonpdf.demo.* package.  These applications make use of JFreeChart, so you'll find two additional jars in the 'lib' directory (jfreechart-1.0.17.jar and jcommon-1.0.21.jar).  These are required for the demo code only.
+There are some demonstration applications included in the [JFree Demos](https://github.com/jfree/jfree-demos) project. 
 
 
 Dual Licensing
@@ -32,9 +33,7 @@ OrsonPDF is dual licensed.  You can use OrsonPDF under the terms of the GNU Gene
 
 Other code distributed with OrsonPDF:
 
-- OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and distributed freely under the (BSD-style) terms listed in the Ascii85OutputStream-license.txt file in the 'lib' folder;
-
-- the JFreeChart and JCommon libraries (required for the demos only) are licensed under the terms of the GNU Lesser General Public License (GNU LGPL), a copy of this license can also be found in the 'lib' folder.  To get the source code and other information about JFreeChart and JCommon, please visit http://www.jfree.org/jfreechart/
+- OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and distributed freely under the (BSD-style) terms listed in the Ascii85OutputStream-license.txt file;
 
 
 Change History
@@ -43,6 +42,9 @@ Change History
 Version 1.8 (not yet released)
 
 - fix for exception in `drawImage()` with null transform;
+- removed Ant build support;
+- moved demo code to https://github.com/jfree/jfree-demos;
+
 
 Version 1.7 (28 September 2015)
 

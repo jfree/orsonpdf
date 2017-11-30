@@ -28,9 +28,7 @@ Dual Licensing
 --------------
 OrsonPDF is dual licensed.  You can use OrsonPDF under the terms of the GNU General Public License version 3 (GPLv3) or later.  If you prefer not to be bound by the terms of the GPLv3, there is an option to buy a commercial license from Object Refinery Limited - see the OrsonPDF web page for details.
 
-Other code distributed with OrsonPDF:
-
-- OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and distributed freely under the (BSD-style) terms listed in the Ascii85OutputStream-license.txt file;
+OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and distributed freely under the (BSD-style) terms listed in the Ascii85OutputStream-license.txt file.
 
 
 Change History

@@ -9,12 +9,9 @@ Version 1.8-SNAPSHOT, by David Gilbert, not yet released.
 
 Overview
 --------
-OrsonPDF is a PDF generation library for the Java(tm) platform that allows you to create content in PDF format using the standard Java2D drawing API (Graphics2D).  OrsonPDF is light-weight, fast, and has no dependencies other than the Java runtime (1.6 or later).  The home page for the project is:
+OrsonPDF is a PDF generation library for the Java(tm) platform that allows you to create content in PDF format using the standard Java2D drawing API (`Graphics2D`).  OrsonPDF is light-weight, fast, and has no dependencies other than the Java runtime (1.6 or later).  The home page for the project is:
 
-    http://www.object-refinery.com/orsonpdf/
-
-Version 1.0 was released on 31 July 2013 and the most recent version (1.7) was released on 28 September 2015.  Changes since the initial release are listed towards the end of this file.
-
+http://www.object-refinery.com/orsonpdf/
 
 Getting Started
 ---------------
@@ -22,7 +19,7 @@ The Javadoc page for the PDFDocument class gives an example of typical usage and
 
 Oracle provides tutorials for Java2D here:
 
-    http://docs.oracle.com/javase/tutorial/2d/
+http://docs.oracle.com/javase/tutorial/2d/
 
 There are some demonstration applications included in the [JFree Demos](https://github.com/jfree/jfree-demos) project. 
 

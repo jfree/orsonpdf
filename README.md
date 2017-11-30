@@ -1,7 +1,7 @@
 OrsonPDF
 ========
 
-Version 1.8-SNAPSHOT, by David Gilbert, not yet released.
+Version 1.8, by David Gilbert, 30 November 2017.
 
 (C)opyright 2013-2017, by Object Refinery Limited.  All rights reserved.
 
@@ -36,7 +36,7 @@ Other code distributed with OrsonPDF:
 Change History
 --------------
 
-Version 1.8 (not yet released)
+Version 1.8 (30 November 2017)
 
 - fix for exception in `drawImage()` with null transform;
 - removed Ant build support;

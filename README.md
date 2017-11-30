@@ -15,7 +15,7 @@ http://www.object-refinery.com/orsonpdf/
 
 Getting Started
 ---------------
-The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.7.jar to your classpath and start coding.
+The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.8.jar to your classpath and start coding.
 
 Oracle provides tutorials for Java2D here:
 

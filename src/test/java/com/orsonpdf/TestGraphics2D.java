@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013-2016, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2017, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -266,7 +266,7 @@ public class TestGraphics2D {
     }
     
     /**
-     * The default user clip should be <code>null</code>.
+     * The default user clip should be {@code null}.
      */
     @Test
     public void checkDefaultClip() {
@@ -692,7 +692,7 @@ public class TestGraphics2D {
     }
     
     /**
-     * Check that a null GlyphVector throws a <code>NullPointerException</code>.
+     * Check that a null GlyphVector throws a {@code NullPointerException}.
      */
     @Test
     public void drawGlyphVectorNull() {

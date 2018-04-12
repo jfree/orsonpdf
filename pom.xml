@@ -6,7 +6,7 @@
     <groupId>com.orsonpdf</groupId>
     <artifactId>orsonpdf</artifactId>
     <version>1.8</version>
-    <packaging>jar</packaging>
+    <packaging>bundle</packaging>
 
     <name>OrsonPDF</name>
     <url>http://www.object-refinery.com/orsonpdf</url>
@@ -64,6 +64,14 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.3.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                </configuration>
+            </plugin>			
         </plugins>
     </build>
 

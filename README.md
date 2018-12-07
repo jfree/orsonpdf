@@ -43,6 +43,7 @@ Change History
 Version 1.9 (not yet released)
 
 - fix for `drawString()` method exception when passing an empty string;
+- fix for `drawImage()` with `null` for `BufferedImageOp`.
 
 
 Version 1.8 (30 November 2017)

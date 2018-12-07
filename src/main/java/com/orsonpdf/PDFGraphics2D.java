@@ -1237,7 +1237,10 @@ public final class PDFGraphics2D extends Graphics2D {
      */
     @Override
     public void drawImage(BufferedImage img, BufferedImageOp op, int x, int y) {
-        BufferedImage imageToDraw = op.filter(img, null);
+        BufferedImage imageToDraw = img;
+        if (op != null) {
+            imageToDraw = op.filter(img, null);
+        }
         drawImage(imageToDraw, new AffineTransform(1f, 0f, 0f, 1f, x, y), null);
     }
 

@@ -750,4 +750,11 @@ public class TestGraphics2D {
         g2.drawImage(img, null, null);
         assertTrue(true); // won't get here if there's an exception above
     }
+    
+    @Test
+    public void drawImageWithNullImageOp() {
+        BufferedImage img = new BufferedImage(10, 10, BufferedImage.TYPE_INT_ARGB);
+        g2.drawImage(img, null, 2, 3);
+        assertTrue(true); // won't get here if there's an exception above        
+    }
 }

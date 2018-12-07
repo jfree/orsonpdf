@@ -1,9 +1,9 @@
 OrsonPDF
 ========
 
-Version 1.8, by David Gilbert, 30 November 2017.
+Version 1.9, by David Gilbert, not yet released.
 
-(C)opyright 2013-2017, by Object Refinery Limited.  All rights reserved.
+(C)opyright 2013-2018, by Object Refinery Limited.  All rights reserved.
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.orsonpdf/orsonpdf/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.orsonpdf/orsonpdf)
 
@@ -15,7 +15,13 @@ http://www.object-refinery.com/orsonpdf/
 
 Getting Started
 ---------------
-The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.8.jar to your classpath and start coding.
+The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.9.jar to your classpath and start coding.  If you use a Maven-based build tool, add the following dependency to your project:
+
+    <dependency>
+        <groupId>com.orsonpdf</groupId>
+        <artifactId>orsonpdf</artifactId>
+        <version>1.8</version>
+    </dependency>
 
 Oracle provides tutorials for Java2D here:
 
@@ -33,6 +39,11 @@ OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and dist
 
 Change History
 --------------
+
+Version 1.9 (not yet released)
+
+- fix for `drawString()` method exception when passing an empty string;
+
 
 Version 1.8 (30 November 2017)
 

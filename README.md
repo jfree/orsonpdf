@@ -58,6 +58,7 @@ Version 1.9 (9 February 2019)
 
 - fix for `drawString()` method exception when passing an empty string;
 - fix for `drawImage()` with `null` for `BufferedImageOp`;
+- fix for transform issue with child `Graphics2D` instance from `create()`;
 - added automatic module name (`com.orsonpdf.orsonpdf`).
 
 

@@ -54,7 +54,7 @@ public class Dictionary {
     private String type;
     
     /** Data storage. */
-    private Map map;
+    private Map<String, Object> map;
 
     /**
      * Creates a new instance with no type.
@@ -71,7 +71,7 @@ public class Dictionary {
      */
     public Dictionary(String type) {
         this.type = type;
-        this.map = new HashMap();    
+        this.map = new HashMap<String, Object>();    
     }
     
     /**
@@ -167,17 +167,17 @@ public class Dictionary {
             b.append("/Type ").append(this.type).append("\n");
         }
         // now iterate through the dictionary and write its values
-        for (Object key : this.map.keySet()) {
+        for (String key : this.map.keySet()) {
             Object value = this.map.get(key);
             if (value instanceof Number || value instanceof String) {
-                b.append(key.toString()).append(" ");
+                b.append(key).append(" ");
                 b.append(value.toString()).append("\n");                
             } else if (value instanceof PDFObject) {
                 PDFObject pdfObj = (PDFObject) value;
-                b.append(key.toString()).append(" ");
+                b.append(key).append(" ");
                 b.append(pdfObj.getReference()).append("\n");
             } else if (value instanceof String[]) {
-                b.append(key.toString()).append(" ");
+                b.append(key).append(" ");
                 String[] array = (String[]) value;
                 b.append("[");
                 for (int i = 0; i < array.length; i++) {
@@ -188,7 +188,7 @@ public class Dictionary {
                 }
                 b.append("]\n");                
             } else if (value instanceof PDFObject[]) {
-                b.append(key.toString()).append(" ");
+                b.append(key).append(" ");
                 PDFObject[] array = (PDFObject[]) value;
                 b.append("[");
                 for (int i = 0; i < array.length; i++) {
@@ -200,16 +200,16 @@ public class Dictionary {
                 b.append("]\n");
             } else if (value instanceof Rectangle2D) {
                 Rectangle2D r = (Rectangle2D) value;
-                b.append(key.toString()).append(" ");
+                b.append(key).append(" ");
                 b.append("[").append(r.getX()).append(" ");
                 b.append(r.getY()).append(" ").append(r.getWidth()).append(" ");
                 b.append(r.getHeight()).append("]\n");
             } else if (value instanceof Dictionary) {
-                b.append(key.toString()).append(" ");
+                b.append(key).append(" ");
                 Dictionary d = (Dictionary) value;
                 b.append(d.toPDFString());
             } else if (value instanceof float[]) {
-                b.append(key.toString()).append(" ");
+                b.append(key).append(" ");
                 float[] array = (float[]) value;
                 b.append("[");
                 for (int i = 0; i < array.length; i++) {

@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013-2018, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2019, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -77,8 +77,8 @@ import com.orsonpdf.util.GraphicsUtils;
  * A {@code Graphics2D} implementation that writes to PDF format.  For 
  * typical usage, see the documentation for the {@link PDFDocument} class.
  * <p>
- * For some demos of the use of this class, please look in the
- * {@code com.orsonpdf.demo} package in the {@code src} directory.
+ * For some demos of the use of this class, please check out the
+ * JFree Demos project at GitHub (https://github.com/jfree/jfree-demos).
  */
 public final class PDFGraphics2D extends Graphics2D {
 
@@ -108,7 +108,7 @@ public final class PDFGraphics2D extends Graphics2D {
     private Font font = new Font("SansSerif", Font.PLAIN, 12);
     
     /** A hidden image used for font metrics. */
-    private BufferedImage image = new BufferedImage(10, 10, 
+    private final BufferedImage image = new BufferedImage(10, 10, 
             BufferedImage.TYPE_INT_RGB);
 
     /**

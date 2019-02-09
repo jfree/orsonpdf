@@ -154,6 +154,13 @@ public final class PDFGraphics2D extends Graphics2D {
     private final FontRenderContext fontRenderContext = new FontRenderContext(
             null, false, true);
 
+    /** 
+     * When an instance is created via the {@link #create()} method, a copy
+     * of the transform in effect is retained so it can be restored once the
+     * child instance is disposed.  See issue #4 at GitHub.
+     */ 
+    AffineTransform originalTransform;
+
     /**
      * Creates a new instance of {@code PDFGraphics2D}.  You won't 
      * normally create this directly, instead you will call the 
@@ -211,6 +218,7 @@ public final class PDFGraphics2D extends Graphics2D {
                 this.height, true);
         copy.setRenderingHints(getRenderingHints());
         copy.setTransform(getTransform());
+        copy.originalTransform = getTransform();
         copy.setClip(getClip());
         copy.setPaint(getPaint());
         copy.setColor(getColor());
@@ -1452,11 +1460,16 @@ public final class PDFGraphics2D extends Graphics2D {
     }
     
     /**
-     * This method does nothing, there are no resources to dispose.
+     * Performs any actions required when the graphics instance is finished
+     * with.  Here we restore the transform on the graphics stream if this
+     * instance was created via the {@link #create() } method.  See issue #4
+     * at GitHub for background info.
      */
     @Override
     public void dispose() {
-        // nothing to do
+        if (this.originalTransform != null) {
+            this.gs.setTransform(this.originalTransform);
+        }
     }
 
     /**

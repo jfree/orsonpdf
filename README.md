@@ -15,7 +15,18 @@ http://www.object-refinery.com/orsonpdf/
 
 Getting Started
 ---------------
-The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add orsonpdf-1.9.jar to your classpath and start coding.  If you use a Maven-based build tool, add the following dependency to your project:
+The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add `orsonpdf-1.9.jar` to your classpath and start coding.
+
+Oracle provides tutorials for Java2D here:
+
+http://docs.oracle.com/javase/tutorial/2d/
+
+There are some demonstration applications included in the [JFree Demos](https://github.com/jfree/jfree-demos) project. 
+
+
+Include
+-------
+OrsonPDF is published to the Central Repository. You can include it in your projects with the following dependency:
 
     <dependency>
         <groupId>com.orsonpdf</groupId>
@@ -23,11 +34,14 @@ The Javadoc page for the PDFDocument class gives an example of typical usage and
         <version>1.9</version>
     </dependency>
 
-Oracle provides tutorials for Java2D here:
+For developers using the Java Module System, OrsonPDF defines the automatic module name `com.orsonpdf.orsonpdf`.
 
-http://docs.oracle.com/javase/tutorial/2d/
 
-There are some demonstration applications included in the [JFree Demos](https://github.com/jfree/jfree-demos) project. 
+Build
+-----
+You can build OrsonPDF from sources using Maven:
+
+    mvn clean install
 
 
 Dual Licensing

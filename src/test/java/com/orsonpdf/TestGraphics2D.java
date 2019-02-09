@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013-2018, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2019, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -69,8 +69,8 @@ public class TestGraphics2D {
     public void setUp() {
         // to test a reference implementation, use this Graphics2D from a
         // BufferedImage in the JDK
-//        BufferedImage img = new BufferedImage(10, 20, BufferedImage.TYPE_INT_ARGB);
-//        this.g2 = img.createGraphics();
+        // BufferedImage img = new BufferedImage(10, 20, BufferedImage.TYPE_INT_ARGB);
+        // this.g2 = img.createGraphics();
  
         // Test PDFGraphics2D...
         PDFDocument pdfDoc = new PDFDocument();
@@ -114,8 +114,8 @@ public class TestGraphics2D {
         
         // in spite of the docs saying that null is accepted this gives
         // a NullPointerException with SunGraphics2D.
-        //g2.setTransform(null);
-        //Assert.assertEquals(new AffineTransform(), g2.getTransform());
+        // g2.setTransform(null);
+        // assertEquals(new AffineTransform(), g2.getTransform());
     }
     
     /**
@@ -757,4 +757,5 @@ public class TestGraphics2D {
         g2.drawImage(img, null, 2, 3);
         assertTrue(true); // won't get here if there's an exception above        
     }
+
 }

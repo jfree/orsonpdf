@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013-2019, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2020, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -1253,13 +1253,17 @@ public final class PDFGraphics2D extends Graphics2D {
     }
 
     /**
-     * Draws the rendered image.
+     * Draws the rendered image. When {@code img} is {@code null} this method
+     * does nothing.
      * 
-     * @param img  the image.
+     * @param img  the image ({@code null} permitted).
      * @param xform  the transform.
      */
     @Override
     public void drawRenderedImage(RenderedImage img, AffineTransform xform) {
+        if (img == null) { // to match the behaviour specified in the JDK
+            return;
+        }
         BufferedImage bi = GraphicsUtils.convertRenderedImage(img);
         drawImage(bi, xform, null);
     }

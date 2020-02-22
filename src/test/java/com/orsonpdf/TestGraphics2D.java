@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013-2019, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2020, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -758,4 +758,12 @@ public class TestGraphics2D {
         assertTrue(true); // won't get here if there's an exception above        
     }
 
+    /**
+     * API docs say the method does nothing when called with a null image.
+     */
+    @Test 
+    public void drawRenderedImageWithNullImage() {
+        g2.drawRenderedImage(null, AffineTransform.getTranslateInstance(0, 0));
+        assertTrue(true); // won't get here if there's an exception above                
+    }
 }

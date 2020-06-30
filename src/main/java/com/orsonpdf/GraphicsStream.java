@@ -2,7 +2,7 @@
  * OrsonPDF : a fast, light-weight PDF library for the Java(tm) platform
  * =====================================================================
  * 
- * (C)opyright 2013-2015, by Object Refinery Limited.  All rights reserved.
+ * (C)opyright 2013-2020, by Object Refinery Limited.  All rights reserved.
  *
  * Project Info:  http://www.object-refinery.com/orsonpdf/index.html
  * 
@@ -488,10 +488,30 @@ public class GraphicsStream extends Stream {
                 // perform "degree elevation":
                 // http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline
                 //       /Bezier/bezier-elev.html
+                /*
                 float x0 = 0.25f * lastX + 0.75f * coords[0];
                 float y0 = 0.25f * lastY + 0.75f * coords[1];
                 float x1 = 0.5f * coords[0] + 0.5f * coords[2];
                 float y1 = 0.5f * coords[1] + 0.5f * coords[3];
+                */
+ 
+                // PDF doesn't support quadratic Bézier curves; it only supports
+                // cubic Bézier curves, so we need to perform "degree elevation"
+                // to convert the quadratic Bézier curve into a cubic Bézier
+                // curve. This is the only way to preserve the original curve's
+                // shape accurately for all arbitrary cases.
+                //
+                // https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/Bezier/bezier-elev.html
+                //
+                // https://en.wikipedia.org/wiki/Bézier_curve#Degree_elevation
+                //
+                // A quadratic curve has degree 2; a cubic curve has degree 3.
+                //
+                // The code is simplified to improve performance and accuracy
+                final float x0 = ( lastX + ( 2f * coords[0] ) ) / 3f;
+                final float y0 = ( lastY + ( 2f * coords[1] ) ) / 3f;
+                final float x1 = ( ( 2f * coords[0] ) + coords[2] ) / 3f;
+                final float y1 = ( ( 2f * coords[1] ) + coords[3] ) / 3f;
                 b.append(geomDP(x0)).append(" ");
                 b.append(geomDP(y0)).append(" ");
                 b.append(geomDP(x1)).append(" ");

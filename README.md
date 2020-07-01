@@ -34,7 +34,7 @@ OrsonPDF is published to the Central Repository. You can include it in your proj
         <version>1.9</version>
     </dependency>
 
-For developers using the Java Module System, OrsonPDF defines the automatic module name `com.orsonpdf.orsonpdf`.
+For developers using the Java Module System, OrsonPDF defines the automatic module name `com.orsonpdf.orsonpdf`.  Alternatively, a new project (https://github.com/jfree/jfreepdf) has been created that supports Java modules directly but requires Java 11 or later.
 
 
 Build
@@ -53,6 +53,11 @@ OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and dist
 
 Change History
 --------------
+
+Version 1.9.1 (not-yet-released)
+
+- fix for `getPDFPath()` method in `GraphicsStream` (https://github.com/jfree/orsonpdf/pull/7)
+
 
 Version 1.9 (9 February 2019)
 

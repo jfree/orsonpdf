@@ -41,7 +41,7 @@ import com.orsonpdf.util.Args;
  */
 public class DictionaryObject extends PDFObject {
     
-    protected Dictionary dictionary;
+    protected final Dictionary dictionary;
 
     /**
      * Creates a new instance.

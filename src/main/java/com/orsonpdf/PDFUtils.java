@@ -33,7 +33,7 @@ package com.orsonpdf;
 
 import com.orsonpdf.util.Args;
 import java.awt.geom.AffineTransform;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -62,7 +62,7 @@ public class PDFUtils {
             if (i != 0) {
                 sb.append(" ");
             }
-            sb.append(String.valueOf(b[i]));
+            sb.append(b[i]);
         }
         return sb.append("]").toString();
     }
@@ -81,7 +81,7 @@ public class PDFUtils {
             if (i != 0) {
                 b.append(" ");
             }
-            b.append(String.valueOf(f[i]));
+            b.append(f[i]);
         }
         return b.append("]").toString();
     }
@@ -100,7 +100,7 @@ public class PDFUtils {
             if (i != 0) {
                 b.append(" ");
             }
-            b.append(String.valueOf(d[i]));
+            b.append(d[i]);
         }
         return b.append("]").toString();
     }
@@ -170,11 +170,7 @@ public class PDFUtils {
      */
     public static byte[] toBytes(String s) {
         byte[] result = null;
-        try {
-            result = s.getBytes("US-ASCII");
-        } catch (UnsupportedEncodingException ex) {
-            throw new RuntimeException(ex);
-        }
+        result = s.getBytes(StandardCharsets.US_ASCII);
         return result;
     }
     

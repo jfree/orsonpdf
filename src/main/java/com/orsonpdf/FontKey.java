@@ -42,13 +42,13 @@ import com.orsonpdf.util.ObjectUtils;
 public class FontKey {
  
     /** The key name. */
-    private String name;
+    private final String name;
     
     /** Flag for bold. */
-    private boolean isBold;
+    private final boolean isBold;
     
     /** Flag for italic. */
-    private boolean isItalic;
+    private final boolean isItalic;
     
     /**
      * Creates a new key for a given font.

@@ -53,7 +53,7 @@ public class Dictionary {
     private String type;
     
     /** Data storage. */
-    private Map<String, Object> map;
+    private final Map<String, Object> map;
 
     /**
      * Creates a new instance with no type.
@@ -170,7 +170,7 @@ public class Dictionary {
             Object value = this.map.get(key);
             if (value instanceof Number || value instanceof String) {
                 b.append(key).append(" ");
-                b.append(value.toString()).append("\n");                
+                b.append(value).append("\n");
             } else if (value instanceof PDFObject) {
                 PDFObject pdfObj = (PDFObject) value;
                 b.append(key).append(" ");

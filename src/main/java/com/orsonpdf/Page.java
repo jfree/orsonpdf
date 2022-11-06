@@ -281,11 +281,10 @@ public class Page extends PDFObject {
         PDFDocument doc = this.parent.getDocument();
 
         if (mgp.getColors().length == 2) {
-            Function f = new ExponentialInterpolationFunction(
+            return new ExponentialInterpolationFunction(
                     doc.getNextNumber(),
-                    mgp.getColors()[0].getRGBColorComponents(null), 
+                    mgp.getColors()[0].getRGBColorComponents(null),
                     mgp.getColors()[1].getRGBColorComponents(null));
-            return f;
         } else {
             int count = mgp.getColors().length - 1;
             Function[] functions = new Function[count];

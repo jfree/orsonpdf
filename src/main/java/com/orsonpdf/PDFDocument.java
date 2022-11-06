@@ -37,7 +37,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -266,7 +266,7 @@ public class PDFDocument {
             xref[xref.length - 1] = bos.size();
             // write the xref table
             bos.write(toBytes("xref\n"));
-            bos.write(toBytes("0 " + String.valueOf(this.nextNumber) 
+            bos.write(toBytes("0 " + this.nextNumber
                     + "\n"));
             bos.write(toBytes("0000000000 65535 f \n"));
             for (int i = 0; i < this.nextNumber - 1; i++) {
@@ -284,8 +284,7 @@ public class PDFDocument {
             trailer.put("/Info", this.info);
             bos.write(trailer.toPDFBytes());
             bos.write(toBytes("startxref\n"));
-            bos.write(toBytes(String.valueOf(xref[this.nextNumber - 1]) 
-                    + "\n"));
+            bos.write(toBytes(xref[this.nextNumber - 1] + "\n"));
             bos.write(toBytes("%%EOF"));
         } catch (IOException ex) {
             throw new RuntimeException(ex);
@@ -328,11 +327,7 @@ public class PDFDocument {
      */
     private byte[] toBytes(String s) {
         byte[] result = null;
-        try {
-            result = s.getBytes("US-ASCII");
-        } catch (UnsupportedEncodingException ex) {
-            throw new RuntimeException(ex);
-        }
+        result = s.getBytes(StandardCharsets.US_ASCII);
         return result;
     }
 

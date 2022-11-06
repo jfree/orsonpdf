@@ -1,21 +1,21 @@
 OrsonPDF
 ========
 
-Version 1.9, by David Gilbert, 9 February 2019.
+Version 1.9.1, by David Gilbert, 6 November 2022.
 
-(C)opyright 2013-2019, by Object Refinery Limited.  All rights reserved.
+(C)opyright 2013-2022, by David Gilbert.  All rights reserved.
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.orsonpdf/orsonpdf/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.orsonpdf/orsonpdf)
 
 Overview
 --------
-OrsonPDF is a PDF generation library for the Java(tm) platform that allows you to create content in PDF format using the standard Java2D drawing API (`Graphics2D`).  OrsonPDF is light-weight, fast, and has no dependencies other than the Java runtime (1.6 or later).  The home page for the project is:
+OrsonPDF is a PDF generation library for the Java(tm) platform that allows you to create content in PDF format using the standard Java2D drawing API (`Graphics2D`).  OrsonPDF is light-weight, fast, and has no dependencies other than the Java runtime (version 8 or later).  The home page for the project is:
 
-http://www.object-refinery.com/orsonpdf/
+https://github.com/jfree/orsonpdf
 
 Getting Started
 ---------------
-The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add `orsonpdf-1.9.jar` to your classpath and start coding.
+The Javadoc page for the PDFDocument class gives an example of typical usage and, if you are already familiar with the Java2D APIs, then all you need to do is add `orsonpdf-1.9.1.jar` to your classpath and start coding.
 
 Oracle provides tutorials for Java2D here:
 
@@ -31,7 +31,7 @@ OrsonPDF is published to the Central Repository. You can include it in your proj
     <dependency>
         <groupId>com.orsonpdf</groupId>
         <artifactId>orsonpdf</artifactId>
-        <version>1.9</version>
+        <version>1.9.1</version>
     </dependency>
 
 For developers using the Java Module System, OrsonPDF defines the automatic module name `com.orsonpdf.orsonpdf`.  Alternatively, a new project (https://github.com/jfree/jfreepdf) has been created that supports Java modules directly but requires Java 11 or later.
@@ -46,7 +46,7 @@ You can build OrsonPDF from sources using Maven:
 
 Dual Licensing
 --------------
-OrsonPDF is dual licensed.  You can use OrsonPDF under the terms of the GNU General Public License version 3 (GPLv3) or later.  If you prefer not to be bound by the terms of the GPLv3, there is an option to buy a commercial license from Object Refinery Limited - see the OrsonPDF web page for details.
+OrsonPDF is dual licensed.  You can use OrsonPDF under the terms of the GNU General Public License version 3 (GPLv3) or later.  If you prefer not to be bound by the terms of the GPLv3, an alternative license is available to JFree sponsors.
 
 OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and distributed freely under the (BSD-style) terms listed in the Ascii85OutputStream-license.txt file.
 
@@ -54,9 +54,10 @@ OrsonPDF integrates the Ascii85OutputStream class written by Ben Upsavs and dist
 Change History
 --------------
 
-Version 1.9.1 (not-yet-released)
+Version 1.9.1 (6 November 2022)
 
 - fix for `getPDFPath()` method in `GraphicsStream` (https://github.com/jfree/orsonpdf/pull/7)
+- update pom.xml plugin dependencies
 
 
 Version 1.9 (9 February 2019)

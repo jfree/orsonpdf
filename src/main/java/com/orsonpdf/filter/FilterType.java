@@ -44,7 +44,7 @@ public enum FilterType {
     /** Flate encoding. */
     FLATE("/FlateDecode");
     
-    private String decode;
+    private final String decode;
     
     /**
      * Creates a new filter type.

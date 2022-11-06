@@ -83,14 +83,14 @@ public enum TextAnchor {
     BOTTOM_RIGHT("TextAnchor.BOTTOM_RIGHT");
 
     /** The name. */
-    private String name;
+    private final String name;
 
     /**
      * Private constructor.
      *
      * @param name  the name.
      */
-    private TextAnchor(final String name) {
+    TextAnchor(final String name) {
         this.name = name;
     }
 

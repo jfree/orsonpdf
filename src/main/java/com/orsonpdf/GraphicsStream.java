@@ -270,7 +270,7 @@ public class GraphicsStream extends Stream {
     /**
      * Applies a {@code RadialGradientPaint} for stroking.
      * 
-     * @param gp  the gradient paint ({@code null} not permitted). 
+     * @param rgp  the gradient paint ({@code null} not permitted).
      */    
     void applyStrokeGradient(RadialGradientPaint rgp) {
         // delegate arg checking
@@ -296,7 +296,7 @@ public class GraphicsStream extends Stream {
     /**
      * Applies a {@code RadialGradientPaint} for filling.
      * 
-     * @param gp  the gradient paint ({@code null} not permitted). 
+     * @param rgp  the gradient paint ({@code null} not permitted).
      */
     void applyFillGradient(RadialGradientPaint rgp) {
         // delegate arg checking

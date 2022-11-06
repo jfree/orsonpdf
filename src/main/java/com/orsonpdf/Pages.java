@@ -161,7 +161,7 @@ public final class Pages extends PDFObject {
             pagesArray[i] = this.pages.get(i);
         }
         dictionary.put("/Kids", pagesArray);
-        dictionary.put("/Count", Integer.valueOf(pages.size()));
+        dictionary.put("/Count", pages.size());
         return dictionary;        
     }
 

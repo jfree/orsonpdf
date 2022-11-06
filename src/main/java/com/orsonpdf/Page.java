@@ -322,7 +322,7 @@ public class Page extends PDFObject {
      * @return The graphics state dictionary reference. 
      */
     String findOrCreateGSDictionary(int alpha) {
-        Integer key = Integer.valueOf(alpha);
+        Integer key = alpha;
         float alphaValue = alpha / 255f;
         String name = this.alphaDictionaries.get(key);
         if (name == null) {
@@ -341,7 +341,7 @@ public class Page extends PDFObject {
 
     /**
      * Adds a soft mask image to the page.  This is called from the 
-     * {@link #addImage(java.awt.Image)} method to support image transparency.
+     * {@link #addImage(java.awt.Image, boolean)} method to support image transparency.
      * 
      * @param img  the image ({@code null} not permitted).
      * 

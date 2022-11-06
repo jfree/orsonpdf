@@ -113,7 +113,7 @@ public class PDFDocument {
         String creationDateStr = "(" + PDFUtils.toDateFormat(now) + ")";
         this.info.put("CreationDate", creationDateStr);
         this.info.put("ModDate", creationDateStr);
-        this.outlines.put("Count", Integer.valueOf(0));
+        this.outlines.put("Count", 0);
         this.catalog.put("Outlines", this.outlines);
         this.pages = new Pages(this.nextNumber++, 0, this);
         this.catalog.put("Pages", this.pages);
@@ -279,7 +279,7 @@ public class PDFDocument {
             // write the trailer
             bos.write(toBytes("trailer\n"));
             Dictionary trailer = new Dictionary();
-            trailer.put("/Size", Integer.valueOf(this.nextNumber));
+            trailer.put("/Size", this.nextNumber);
             trailer.put("/Root", this.catalog);
             trailer.put("/Info", this.info);
             bos.write(trailer.toPDFBytes());

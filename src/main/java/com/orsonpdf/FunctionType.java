@@ -51,9 +51,9 @@ public enum FunctionType {
     POSTSCRIPT_CALCULATOR(4);
     
     /** The PDF number for the function type. */
-    private int number;
+    private final int number;
     
-    private FunctionType(int number) {
+    FunctionType(int number) {
         this.number = number;
     }
     

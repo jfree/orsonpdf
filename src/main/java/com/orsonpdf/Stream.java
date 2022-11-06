@@ -112,7 +112,7 @@ public abstract class Stream extends PDFObject {
      */
     protected Dictionary createDictionary(int streamLength) {
         Dictionary dictionary = new Dictionary();
-        dictionary.put("/Length", Integer.valueOf(streamLength));
+        dictionary.put("/Length", streamLength);
         if (!this.filters.isEmpty()) {
             String[] decodes = new String[this.filters.size()];
             int count = this.filters.size();

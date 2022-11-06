@@ -53,14 +53,14 @@ public enum ShadingType {
     TENSOR(7);
     
     /** The PDF number for this shading type. */
-    private int number;
+    private final int number;
     
     /**
      * Creates a new shading type.
      * 
      * @param number  the PDF number for the shading type. 
      */
-    private ShadingType(int number) {
+    ShadingType(int number) {
         this.number = number;
     }
     
